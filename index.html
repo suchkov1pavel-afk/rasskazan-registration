@@ -1,371 +1,380 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0d1713" />
-  <title>Чек-лист Рассказани</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="shortcut icon" href="assets/favicon.svg" />
-  <link rel="apple-touch-icon" href="assets/favicon-180.png" />
-  <style>
-    :root{
-      --bg:#0c1511;
-      --card:#f4efe4;
-      --card-2:#ece5d7;
-      --ink:#18231d;
-      --muted:#677069;
-      --line:rgba(24,35,29,.13);
-      --forest:#16392a;
-      --forest-2:#0f281e;
-      --gold:#d4a855;
-      --gold-2:#f0cc7a;
-      --orange:#c96f42;
-      --soft:#f8f3e9;
-      --white:#fffdf8;
-      --shadow:0 22px 70px rgba(0,0,0,.25);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      color:var(--ink);
-      font-family:"Segoe UI",Inter,Arial,sans-serif;
-      line-height:1.45;
-      background:var(--bg);
-      overflow-x:hidden;
-    }
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-2;
-      background:
-        linear-gradient(rgba(7,15,11,.79),rgba(7,15,11,.88)),
-        url('assets/bg.webp') center/cover no-repeat;
-      transform:scale(1.05);
-    }
-    body::after{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-1;
-      pointer-events:none;
-      background:
-        radial-gradient(circle at 15% 10%,rgba(212,168,85,.11),transparent 30rem),
-        radial-gradient(circle at 85% 35%,rgba(87,146,117,.12),transparent 35rem);
-    }
-    button,input{font:inherit}
-    button{touch-action:manipulation}
-    .page{width:min(1180px,calc(100% - 28px));margin:0 auto;padding:14px 0 72px}
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Рассказань — регистрация</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Prata&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1411;--card:rgba(15,28,24,.82);--line:rgba(255,255,255,.12);--text:#f5f2ea;--muted:#c6d0cb;--accent:#f3c47d;--accent2:#a9d5c0;--radius:26px;--shadow:0 22px 60px rgba(0,0,0,.35)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Manrope,system-ui,sans-serif;color:var(--text);background-color:#0b1411;background-image:linear-gradient(rgba(7,14,11,.58),rgba(7,14,11,.82)),url('assets/site-bg.webp');background-position:center top;background-size:cover;background-attachment:fixed;background-repeat:no-repeat}a{color:inherit}img{max-width:100%;display:block}.container{width:min(1160px,calc(100% - 28px));margin:0 auto}.serif{font-family:Prata,Georgia,serif;font-weight:400}.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:var(--accent2);font-weight:800}.muted{color:var(--muted)}
+.nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:50;width:min(1120px,calc(100% - 20px));padding:10px 14px;border:1px solid var(--line);background:rgba(6,14,11,.62);backdrop-filter:blur(12px);border-radius:999px;display:flex;justify-content:space-between;align-items:center}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800}.mark{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#fff0c9);color:#12201c}.navlinks{display:flex;gap:18px;align-items:center;font-size:14px}.btn{border:0;border-radius:999px;padding:13px 18px;font:inherit;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn-primary{background:var(--accent);color:#13211d}.btn-ghost{background:rgba(255,255,255,.08);border:1px solid var(--line);color:var(--text)}
+.hero{min-height:100svh;display:grid;align-items:end;padding:132px 0 58px}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:26px}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}.pill{padding:9px 12px;border:1px solid var(--line);background:rgba(255,255,255,.06);border-radius:999px;font-size:13px}.hero h1{font-size:clamp(56px,10vw,132px);line-height:.92;margin:.1em 0 .18em;letter-spacing:-.05em}.hero h1 em{font-style:normal;color:var(--accent)}.hero p{max-width:760px;font-size:clamp(17px,2vw,21px);line-height:1.7;color:#ebefec}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.glass{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow);backdrop-filter:blur(10px)}.challenge{padding:24px;align-self:end}.challenge h3{font-size:28px;margin:.2em 0}.challenge p{color:var(--muted);line-height:1.65}.challenge .buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.challenge-response{display:none;margin-top:14px;padding:13px 15px;border-radius:15px;border:1px solid rgba(243,196,125,.34);background:rgba(243,196,125,.09);color:#fff1d5;font-weight:800;line-height:1.45;animation:responseIn .28s ease}.challenge-response.show{display:block}@keyframes responseIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+section{padding:88px 0}.section-title{font-size:clamp(38px,5vw,72px);line-height:1.04;letter-spacing:-.035em;margin-bottom:16px}.section-lead{max-width:800px;font-size:18px;line-height:1.8;color:#dde3df}.story{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px}.copy p{font-size:17px;line-height:1.8;color:#d8dfdb}.quote{padding:18px 18px 18px 22px;border-left:3px solid var(--accent);background:linear-gradient(90deg,rgba(243,196,125,.11),transparent);border-radius:0 18px 18px 0;color:#f6eeda;font-size:21px}.themes-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-top:34px;margin-bottom:16px}.themes-head h3{margin:0;font-size:clamp(28px,3vw,42px);line-height:1.1}.themes-head p{margin:0;max-width:420px;color:var(--muted);font-size:14px;line-height:1.6}.topics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.topic{position:relative;min-height:172px;padding:22px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));overflow:hidden;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}.topic::before{content:'';position:absolute;inset:auto -30px -42px auto;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(243,196,125,.22),transparent 67%);pointer-events:none}.topic:hover{transform:translateY(-5px);border-color:rgba(243,196,125,.5);box-shadow:0 20px 46px rgba(0,0,0,.24)}.topic-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}.topic-num{font-size:12px;font-weight:800;letter-spacing:.15em;color:var(--accent)}.topic-icon{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(243,196,125,.12);border:1px solid rgba(243,196,125,.2);font-size:18px}.topic-kicker{display:block;margin-bottom:7px;color:var(--accent2);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.topic-title{display:block;font-size:clamp(18px,2vw,23px);line-height:1.25;font-weight:800;letter-spacing:-.02em}.topic-sub{display:block;margin-top:9px;color:var(--muted);font-size:12px}
+.gallery-label{margin-top:30px;margin-bottom:16px}.past-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}.gallery-column{display:grid;gap:14px;align-content:start}.photo{width:100%;overflow:hidden;border-radius:22px;border:1px solid var(--line);box-shadow:var(--shadow);background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025))}.photo img{width:100%;height:auto;object-fit:contain;background:#09100e;transition:transform .35s ease}.photo:hover img{transform:scale(1.012)}
+.band{padding:78px 0}.band-card{padding:40px;max-width:none;min-height:330px;display:grid;grid-template-columns:.85fr 1.15fr;gap:38px;align-items:center}.band-copy .section-lead{max-width:none}.activities{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.act{padding:11px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.05);font-size:14px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{padding:28px}.price{font-size:52px;font-weight:800;color:var(--accent);letter-spacing:-.04em}.family{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.family div{padding:14px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid var(--line)}.family span{display:block;color:var(--muted);font-size:13px;margin-bottom:5px}.map{margin-top:16px;border-radius:20px;overflow:hidden;border:1px solid var(--line);height:360px}.map iframe{width:100%;height:100%;border:0}
+.form-layout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:18px;align-items:start}.form-card{padding:28px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:8px;margin-bottom:14px}.field label,.label{font-size:13px;font-weight:800;color:#eef2f0}input,textarea,select{width:100%;padding:15px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(4,10,8,.5);color:var(--text);font:inherit}textarea{min-height:96px;resize:vertical}.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}.seg input,.plans input,.pay input{position:absolute;opacity:0}.seg label,.pay label{display:flex;align-items:center;justify-content:center;padding:13px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.04);cursor:pointer;font-weight:700}.seg input:checked+label,.pay input:checked+label{border-color:var(--accent);background:rgba(243,196,125,.12)}.plans{display:grid;grid-template-columns:1fr 1fr;gap:10px}.plans label{display:block;padding:16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.04);cursor:pointer}.plans label strong{display:block}.plans label span{display:block;color:var(--muted);font-size:13px;margin-top:4px}.plans label b{display:block;color:var(--accent);font-size:22px;margin-top:10px}.plans input:checked+label{border-color:var(--accent);background:linear-gradient(135deg,rgba(243,196,125,.18),rgba(169,213,192,.08))}.participants-head{display:flex;justify-content:space-between;gap:14px;align-items:center;margin:8px 0 14px}.participants-head h3{margin:0;font-size:26px}.add-participant{padding:11px 15px}.participant-card{position:relative;padding:20px;margin-bottom:14px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.025))}.participant-top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:14px}.participant-title{font-size:16px;font-weight:800}.remove-participant{display:none;border:1px solid var(--line);background:rgba(255,255,255,.05);color:#f8cfc7;border-radius:999px;padding:7px 11px;cursor:pointer;font:inherit;font-size:12px}.participant-card:not(:first-child) .remove-participant{display:inline-flex}.participant-price{margin-left:auto;padding:7px 11px;border-radius:999px;border:1px solid rgba(243,196,125,.35);background:rgba(243,196,125,.09);color:var(--accent);font-weight:800;font-size:13px;white-space:nowrap}.benefits-panel{margin:8px 0 16px;border:1px solid rgba(255,255,255,.11);border-radius:17px;background:rgba(255,255,255,.025);overflow:hidden}.benefits-panel summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;cursor:pointer;font-size:13px;font-weight:800;color:#e4ebe7}.benefits-panel summary::-webkit-details-marker{display:none}.benefits-panel summary::after{content:'+';font-size:20px;color:var(--muted);font-weight:500}.benefits-panel[open] summary::after{content:'−'}.benefits-panel summary small{color:var(--muted);font-size:11px;font-weight:600}.benefits-content{padding:0 14px 14px}.benefits-intro{margin:0 0 10px;color:var(--muted);font-size:12px;line-height:1.55}.benefit-rows{display:grid;gap:9px}.benefit-row{display:grid;grid-template-columns:minmax(130px,.8fr) 2.2fr;gap:10px;align-items:center;padding:11px;border-radius:14px;background:rgba(4,10,8,.28);border:1px solid rgba(255,255,255,.075)}.benefit-person{font-size:13px;font-weight:800}.benefit-person small{display:block;margin-top:3px;color:var(--muted);font-size:11px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.family-tier-buttons{display:grid;grid-template-columns:1fr 1fr;gap:7px}.tier-btn{min-height:40px;padding:8px 10px;border-radius:11px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.025);color:#dce4e0;font:inherit;font-size:11px;font-weight:700;line-height:1.3;cursor:pointer;transition:.2s}.tier-btn:hover{border-color:rgba(243,196,125,.34)}.tier-btn.active{border-color:rgba(243,196,125,.7);background:rgba(243,196,125,.1);color:#ffe1ae}.tier-hint{grid-column:2;margin-top:-2px;color:var(--muted);font-size:10px;line-height:1.4}.countdown-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0 30px}.countdown-card{padding:22px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));box-shadow:var(--shadow)}.countdown-card.price-clock{border-color:rgba(243,196,125,.32)}.countdown-card.close-clock{border-color:rgba(169,213,192,.28)}.countdown-title{font-size:17px;font-weight:800;margin:4px 0 16px}.countdown{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.count-unit{padding:12px 8px;border-radius:15px;background:rgba(4,10,8,.42);border:1px solid var(--line);text-align:center}.count-unit strong{display:block;font-size:clamp(24px,4vw,38px);line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}.count-unit span{display:block;margin-top:7px;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}.countdown-deadline{margin-top:12px;color:var(--muted);font-size:12px}.countdown-status{display:none;margin-top:12px;padding:10px 12px;border-radius:12px;background:rgba(243,196,125,.1);color:#ffe5bb;font-weight:800;font-size:13px}.countdown-status.show{display:block}.upload{padding:16px;border:1px dashed rgba(255,255,255,.28);border-radius:18px;background:rgba(255,255,255,.03)}.upload input{background:none;padding:0;border:0}.summary{position:sticky;top:88px;padding:24px}.sum-line{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}.sum-line span{color:var(--muted)}.breakdown{display:grid;gap:8px;margin:14px 0}.breakdown div{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:#d8e0dc}.total{display:flex;justify-content:space-between;align-items:end;margin-top:18px}.total strong{font-size:36px;color:var(--accent)}.note{font-size:12px;line-height:1.6;color:var(--muted);margin-top:16px}.status{display:none;margin-top:14px;padding:12px 14px;border-radius:14px}.status.show{display:block}.ok{background:#17352a;color:#ccffe4}.err{background:#3a201c;color:#ffd7cf}.hint{font-size:12px;color:var(--muted)}.consent-row{display:flex;gap:10px;align-items:flex-start;margin:16px 0 14px;padding:13px 14px;border-radius:14px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.1);color:#d8e1dc;font-size:12px;line-height:1.55}.consent-row input{width:18px;height:18px;min-width:18px;margin:1px 0 0;accent-color:#f3c47d}.consent-row strong{color:#fff1d2}
+footer{padding:36px 0 56px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}.footer-title{font-size:22px;color:var(--text)}
+@media(max-width:900px){.hero-grid,.story,.info-grid,.form-layout,.band-card{grid-template-columns:1fr}.themes-head{align-items:flex-start;flex-direction:column}.topics{grid-template-columns:1fr 1fr}.past-gallery{grid-template-columns:1fr 1fr}.gallery-column:last-child{grid-column:span 2;grid-template-columns:1fr 1fr}.family{grid-template-columns:1fr}.summary{position:static}}
+@media(max-width:640px){body{background-attachment:scroll;background-position:center top}.navlinks a:not(.cta){display:none}.hero{padding-top:110px}.hero h1{font-size:58px}.topics,.form-grid,.plans,.past-gallery,.gallery-column:last-child{grid-template-columns:1fr}.gallery-column:last-child{grid-column:auto}.topic{min-height:150px}.challenge .buttons,.seg,.family-tier-buttons,.countdown-grid{grid-template-columns:1fr}.benefit-row{grid-template-columns:1fr}.tier-hint{grid-column:1}.countdown{grid-template-columns:repeat(3,1fr)}.participants-head{align-items:flex-start;flex-direction:column}.band-card{padding:26px;min-height:auto}.container{width:min(100% - 22px,1160px)}}
 
-    .hero{
-      min-height:640px;
-      display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      overflow:hidden;
-      border-radius:34px;
-      border:1px solid rgba(255,255,255,.13);
-      background:rgba(10,24,18,.84);
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(10px);
-    }
-    .hero-copy{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      padding:54px 48px;
-      color:white;
-      background:
-        radial-gradient(circle at 0 0,rgba(212,168,85,.15),transparent 28rem),
-        linear-gradient(140deg,rgba(9,27,19,.95),rgba(14,43,31,.88));
-    }
-    .eyebrow{
-      width:max-content;
-      padding:8px 13px;
-      border:1px solid rgba(255,255,255,.18);
-      border-radius:999px;
-      color:#e5d7b5;
-      background:rgba(255,255,255,.06);
-      font-size:.8rem;
-      font-weight:800;
-      letter-spacing:.13em;
-      text-transform:uppercase;
-    }
-    h1{
-      margin:22px 0 16px;
-      font-size:clamp(3rem,6.7vw,6.4rem);
-      line-height:.92;
-      letter-spacing:-.06em;
-    }
-    .hero-line{
-      margin:0;
-      max-width:620px;
-      color:#f1eadb;
-      font-family:Georgia,"Times New Roman",serif;
-      font-size:clamp(1.25rem,2.2vw,1.9rem);
-      line-height:1.34;
-    }
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-    .hero-visual{position:relative;min-height:640px;background:url('assets/hero.webp') center/cover no-repeat}
-    .hero-visual::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,24,18,.45),transparent 32%),linear-gradient(0deg,rgba(8,18,13,.28),transparent 45%)}
+/* Исправленная компоновка блока тем */
+#about .about-overview{display:grid;grid-template-columns:minmax(300px,.88fr) minmax(0,1.12fr);gap:clamp(32px,5vw,72px);align-items:start;margin-bottom:64px}
+#about .story-intro{position:static}
+#about .copy{max-width:720px}
+#about .topics-wrap{width:100%;margin-top:0}
+#about .topics-heading{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:36px;align-items:end;margin-bottom:26px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.12)}
+#about .topics-title{font-size:clamp(43px,5.2vw,72px);line-height:.98;letter-spacing:-.035em;margin:10px 0 0}
+#about .topics-intro{justify-self:end;max-width:390px;margin:0;color:#d7dfda;font-size:16px;line-height:1.7}
+#about .topics.topics-strips{display:grid!important;grid-template-columns:1fr!important;gap:10px!important;margin:0}
+#about .topic.topic-strip{position:relative!important;min-height:0!important;width:100%;padding:16px 20px!important;display:grid!important;grid-template-columns:64px minmax(0,1fr) minmax(190px,.52fr)!important;align-items:center!important;gap:18px!important;border:1px solid rgba(255,255,255,.13)!important;border-radius:17px!important;background:linear-gradient(90deg,rgba(255,255,255,.07),rgba(255,255,255,.025))!important;box-shadow:0 9px 24px rgba(0,0,0,.14)!important;overflow:hidden!important;transform:none!important}
+#about .topic.topic-strip::before{content:""!important;position:absolute!important;left:0!important;top:0!important;bottom:0!important;width:3px!important;height:auto!important;border-radius:0!important;background:linear-gradient(180deg,#f3c47d,#9dd3c1)!important}
+#about .topic.topic-strip:hover{transform:translateX(4px)!important;border-color:rgba(243,196,125,.42)!important;box-shadow:0 13px 32px rgba(0,0,0,.2)!important}
+#about .topic-number{display:flex;align-items:center;justify-content:center;width:43px;height:43px;border:1px solid rgba(243,196,125,.34);border-radius:50%;background:rgba(243,196,125,.1);color:#f3c47d;font-size:13px;font-weight:800;letter-spacing:.08em}
+#about .topic-main{min-width:0}
+#about .topic-kicker{display:block;margin:0 0 4px;color:#9dd3c1;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+#about .topic-main h4{margin:0;color:#fff;font-size:clamp(19px,2vw,25px);line-height:1.16;font-weight:800;letter-spacing:-.015em}
+#about .topic-subtitle{justify-self:end;text-align:right;color:#cbd5d0;font-size:14px;line-height:1.35}
+@media(max-width:900px){
+  #about .about-overview,#about .topics-heading{grid-template-columns:1fr}
+  #about .about-overview{gap:24px;margin-bottom:50px}
+  #about .topics-intro{justify-self:start;max-width:680px}
+}
+@media(max-width:640px){
+  #about .topics-title{font-size:40px}
+  #about .topic.topic-strip{grid-template-columns:48px minmax(0,1fr)!important;gap:12px!important;padding:15px 14px!important}
+  #about .topic-number{width:38px;height:38px}
+  #about .topic-subtitle{grid-column:2;justify-self:start;text-align:left;margin-top:-4px;font-size:13px}
+}
 
-    .btn{
-      appearance:none;
-      border:0;
-      border-radius:999px;
-      padding:14px 19px;
-      font-weight:800;
-      cursor:pointer;
-      transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
-    }
-    .btn:hover{transform:translateY(-2px)}
-    .btn:active{transform:translateY(1px) scale(.99)}
-    .btn-primary{background:var(--gold-2);color:#20261f;box-shadow:0 10px 26px rgba(212,168,85,.25)}
-    .btn-light{background:rgba(255,255,255,.09);color:white;border:1px solid rgba(255,255,255,.19)}
-    .btn-dark{background:var(--forest);color:white}
-    .btn-soft{background:#eee6d8;color:#233128;border:1px solid #ddd2c0}
 
-    .album-strip{
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:12px;
-      margin:16px 0 2px;
-    }
-    .album-shot{
-      min-height:176px;
-      border-radius:24px;
-      overflow:hidden;
-      position:relative;
-      background:var(--shot) center/cover no-repeat;
-      border:1px solid rgba(255,255,255,.16);
-      box-shadow:0 16px 42px rgba(0,0,0,.18);
-    }
-    .album-shot::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg,transparent 48%,rgba(5,14,10,.28));
-      pointer-events:none;
-    }
-    .album-shot:nth-child(1){grid-column:span 2}
 
-    .topbar{display:flex;gap:16px;align-items:center;padding:28px 0 16px}
-    .progress-wrap{
-      flex:1;
-      padding:18px 20px;
-      border-radius:24px;
-      background:rgba(244,239,228,.94);
-      box-shadow:0 16px 45px rgba(0,0,0,.16);
-      border:1px solid rgba(255,255,255,.22);
-    }
-    .progress-meta{display:flex;justify-content:space-between;gap:10px;margin-bottom:10px;font-weight:800}
-    .progress-track{height:11px;border-radius:999px;background:#dcd5c8;overflow:hidden}
-    .progress-bar{width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--orange),var(--gold),#789f83);transition:width .35s ease}
-    .quick-actions{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+/* Финальная адаптация: приоритет мобильным устройствам */
+html{-webkit-text-size-adjust:100%}
+body{overflow-x:hidden}
+button,input,textarea,select{touch-action:manipulation}
+.btn,.seg label,.pay label,.plans label,.tier-btn,.add-participant,.remove-participant{min-height:46px}
 
-    main{display:grid;gap:18px}
-    .section{
-      overflow:hidden;
-      border-radius:30px;
-      border:1px solid rgba(255,255,255,.2);
-      background:rgba(244,239,228,.97);
-      box-shadow:0 18px 55px rgba(0,0,0,.14);
-    }
-    .section-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;min-height:100%}
-    .section.reverse .section-layout{grid-template-columns:280px minmax(0,1fr)}
-    .section.reverse .section-photo{order:-1}
-    .section-content{padding:26px}
-    .section-photo{min-height:100%;background:var(--photo) center/cover no-repeat;position:relative}
-    .section-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(244,239,228,.12),rgba(0,0,0,.1))}
-    .section-head{display:grid;grid-template-columns:58px 1fr auto;align-items:center;gap:14px;margin-bottom:18px}
-    .section-icon{display:grid;place-items:center;width:58px;height:58px;border-radius:18px;font-size:1.8rem;background:var(--tone,#e8ddc8);border:1px solid rgba(24,35,29,.1);box-shadow:0 8px 22px rgba(30,44,35,.08)}
-    .section h2{margin:0;font-size:clamp(1.45rem,2.8vw,2.05rem);letter-spacing:-.035em}
-    .section-sub{margin:4px 0 0;color:var(--muted)}
-    .items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
-    .check{
-      display:grid;
-      grid-template-columns:auto 1fr;
-      gap:12px;
-      align-items:flex-start;
-      padding:14px;
-      border:1px solid var(--line);
-      border-radius:17px;
-      background:rgba(255,253,248,.88);
-      cursor:pointer;
-      transition:transform .16s ease,border-color .16s ease,background .16s ease;
-    }
-    .check:hover{transform:translateY(-2px);border-color:rgba(22,57,42,.32)}
-    .check input{appearance:none;width:23px;height:23px;border-radius:7px;border:2px solid #9ba39e;background:white;margin:1px 0 0;display:grid;place-items:center}
-    .check input::after{content:"✓";font-size:16px;line-height:1;color:white;transform:scale(0);transition:transform .13s ease}
-    .check input:checked{background:var(--forest);border-color:var(--forest)}
-    .check input:checked::after{transform:scale(1)}
-    .check:has(input:checked){background:#edf3ed;border-color:#9eb5a3}
-    .check:has(input:checked) .item-title{text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:#7a927f}
-    .item-num{display:inline-flex;margin-right:6px;color:var(--orange);font-weight:900}
-    .item-title{font-weight:800;line-height:1.3}
-    .item-note{display:block;margin-top:4px;color:var(--muted);font-size:.91rem;line-height:1.4}
-    .urgent{color:#86342d;font-weight:900}
+@media (max-width:1100px){
+  .container{width:min(100% - 32px,960px)}
+  .nav{width:calc(100% - 24px)}
+  .hero{padding-top:118px}
+  .hero-grid{grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr)}
+  .hero h1{font-size:clamp(64px,9vw,104px)}
+  .form-layout{grid-template-columns:minmax(0,1fr) 320px}
+}
 
-    .fun-zone{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:2px}
-    .fun-card{padding:26px;min-height:260px;border-radius:30px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,.15);box-shadow:0 18px 55px rgba(0,0,0,.14)}
-    .fun-card.dark{color:white;background:linear-gradient(145deg,rgba(14,39,28,.98),rgba(20,65,45,.96)),url('assets/light.webp') center/cover no-repeat}
-    .fun-card.paper{background:rgba(239,231,213,.97)}
-    .fun-card h2{margin:0 0 8px;font-size:clamp(1.6rem,3vw,2.4rem);letter-spacing:-.045em}
-    .fun-card p{margin:0;color:inherit;opacity:.78}
-    .fun-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-    .phrase-box{min-height:84px;margin-top:18px;padding:16px 18px;border-radius:18px;border:1px dashed rgba(255,255,255,.3);background:rgba(255,255,255,.07);display:flex;align-items:center;font-size:1.05rem;font-weight:800;line-height:1.4}
-    .mini-list{display:grid;gap:10px;margin-top:20px}
-    .mini{padding:13px 15px;border-radius:16px;background:rgba(255,255,255,.65);border:1px solid rgba(24,35,29,.09);font-weight:750}
+@media (max-width:820px){
+  :root{--radius:22px;--shadow:0 18px 45px rgba(0,0,0,.30)}
+  body{background-attachment:scroll;background-position:center top}
+  section{padding:66px 0}
+  .container{width:min(100% - 28px,720px)}
+  .nav{top:8px;padding:8px 9px 8px 13px;border-radius:22px}
+  .brand{font-size:13px}.mark{width:32px;height:32px}.navlinks{gap:8px}.navlinks a:not(.cta){display:none}.nav .cta{padding:10px 15px;min-height:40px}
+  .hero{min-height:auto;padding:106px 0 42px;align-items:start}
+  .hero-grid{grid-template-columns:1fr;gap:22px}
+  .hero h1{font-size:clamp(54px,15vw,82px);line-height:.94;margin:.12em 0 .24em}
+  .hero p{font-size:17px;line-height:1.65}
+  .meta{gap:7px;margin-bottom:13px}.pill{padding:8px 10px;font-size:12px}
+  .hero-actions{display:grid;grid-template-columns:1fr 1fr;margin-top:21px}.hero-actions .btn{width:100%;padding-inline:12px}
+  .challenge{padding:21px}.challenge h3{font-size:25px}.challenge p{font-size:15px;margin-bottom:0}.challenge .buttons{grid-template-columns:1fr 1fr}
+  .section-title{font-size:clamp(38px,10vw,55px);line-height:1.02}.section-lead{font-size:16px;line-height:1.7}
+  #about .about-overview{grid-template-columns:1fr;gap:22px;margin-bottom:44px}
+  #about .copy{max-width:none}.copy p{font-size:16px;line-height:1.72}.quote{font-size:18px;padding:17px 16px 17px 20px}
+  #about .topics-heading{grid-template-columns:1fr;gap:15px;padding-bottom:18px;margin-bottom:18px}
+  #about .topics-title{font-size:clamp(39px,10vw,54px);line-height:1.02}
+  #about .topics-intro{justify-self:start;max-width:none;font-size:14px}
+  #about .topic.topic-strip{grid-template-columns:54px minmax(0,1fr) minmax(150px,.48fr)!important;gap:13px!important;padding:15px 16px!important}
+  #about .topic-main h4{font-size:20px}.topic-subtitle{font-size:13px!important}
+  .past-gallery{grid-template-columns:1fr 1fr}.gallery-column:last-child{grid-column:1/-1;grid-template-columns:1fr 1fr}
+  .band-card{grid-template-columns:1fr;min-height:auto;padding:29px;gap:18px}.band{padding:55px 0}.activities{margin-top:16px}
+  .info-grid{grid-template-columns:1fr}.card{padding:24px}.map{height:320px}
+  .countdown-grid{grid-template-columns:1fr;gap:12px;margin:18px 0 24px}.countdown-card{padding:18px}.countdown-title{margin-bottom:13px}
+  .form-layout{grid-template-columns:1fr}.summary{position:static;order:-1;padding:21px}.form-card{padding:22px}
+  .form-grid{grid-template-columns:1fr 1fr}.participants-head{align-items:center}.participant-card{padding:17px}
+  .benefit-row{grid-template-columns:1fr}.tier-hint{grid-column:1}.family-tier-buttons{grid-template-columns:1fr 1fr}
+  footer{padding:31px 0 46px}
+}
 
-    .footer{margin-top:20px;padding:30px;text-align:center;border-radius:30px;color:white;background:linear-gradient(130deg,rgba(16,45,32,.98),rgba(7,22,16,.98));box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.12)}
-    .footer h2{margin:0 0 8px;font-size:clamp(1.8rem,4vw,3rem)}
-    .footer p{margin:0;color:#d6e0d9}
-    .footer .btn{margin-top:18px}
+@media (max-width:560px){
+  section{padding:54px 0}
+  .container{width:calc(100% - 20px)}
+  .nav{width:calc(100% - 14px)}
+  .brand span:last-child{max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .nav .cta{font-size:13px;padding:9px 13px}
+  .hero{padding-top:91px;padding-bottom:34px}
+  .hero h1{font-size:clamp(49px,15.5vw,67px)}
+  .eyebrow{font-size:10px;letter-spacing:.16em}
+  .hero-actions{grid-template-columns:1fr}.hero-actions .btn{min-height:49px}
+  .challenge{padding:18px;border-radius:20px}.challenge h3{font-size:23px}.challenge .buttons{gap:8px}.challenge-response{font-size:14px}
+  .section-title{font-size:clamp(35px,11vw,46px)}
+  #about .topics-title{font-size:clamp(36px,11vw,46px)}
+  #about .topic.topic-strip{grid-template-columns:44px minmax(0,1fr)!important;gap:10px!important;padding:14px 13px!important;border-radius:15px!important}
+  #about .topic-number{width:35px;height:35px;font-size:11px}
+  #about .topic-main h4{font-size:18px}
+  #about .topic-subtitle{grid-column:2;justify-self:start;text-align:left;margin-top:-2px;font-size:12px!important}
+  .past-gallery{display:flex;overflow-x:auto;gap:12px;padding:2px 3px 14px;scroll-snap-type:x mandatory;scrollbar-width:none}.past-gallery::-webkit-scrollbar{display:none}.gallery-column,.gallery-column:last-child{display:contents}.photo{flex:0 0 min(86vw,360px);scroll-snap-align:center;border-radius:18px}.photo img{max-height:72vh;object-fit:contain}
+  .band-card{padding:22px}.band-card .section-title{font-size:39px!important}.activities{gap:7px}.act{padding:9px 11px;font-size:12px}
+  .card{padding:20px}.price{font-size:45px}.family{gap:8px}.map{height:280px}
+  .countdown-card{padding:16px;border-radius:19px}.countdown-title{font-size:16px}.countdown{gap:6px}.count-unit{padding:11px 4px;border-radius:13px}.count-unit strong{font-size:26px}.count-unit span{font-size:9px;letter-spacing:.04em}.countdown-deadline{font-size:11px;line-height:1.45}
+  .form-card{padding:15px;border-radius:20px}.form-grid{grid-template-columns:1fr}.participants-head{align-items:stretch;flex-direction:column}.participants-head h3{font-size:23px}.add-participant{width:100%}
+  .participant-card{padding:14px;border-radius:17px}.participant-top{display:grid;grid-template-columns:1fr auto;gap:8px}.participant-price{margin-left:0}.remove-participant{grid-column:1/-1;justify-self:end}
+  input,textarea,select{font-size:16px;padding:14px 13px}
+  .seg{grid-template-columns:1fr 1fr;gap:7px}.seg label,.pay label{padding:11px 8px;font-size:13px}
+  .plans{grid-template-columns:1fr 1fr;gap:8px}.plans label{padding:13px 11px;border-radius:14px;min-height:126px}.plans label strong{font-size:14px}.plans label span{font-size:11px;line-height:1.35}.plans label b{font-size:19px;margin-top:8px}
+  .benefits-panel{margin-top:5px}.benefits-panel summary{padding:13px;font-size:12px;align-items:flex-start}.benefits-panel summary small{font-size:10px}.benefits-content{padding:0 10px 10px}.family-tier-buttons{grid-template-columns:1fr}.tier-btn{font-size:11px;padding:9px}.benefit-person small{white-space:normal}
+  .upload{padding:13px}.upload strong{font-size:13px;line-height:1.5}.upload input{font-size:13px}
+  .consent-row{padding:12px;font-size:11px}.summary{padding:18px;border-radius:20px}.summary h3{font-size:24px!important}.sum-line{font-size:13px}.total strong{font-size:31px}.breakdown div{font-size:12px}
+  footer .container{display:grid!important;gap:14px!important;align-items:start!important}
+}
 
-    .toast{position:fixed;left:50%;bottom:22px;z-index:100;width:min(92vw,620px);padding:16px 20px;border-radius:18px;color:white;background:#10261b;box-shadow:0 20px 60px rgba(0,0,0,.32);transform:translate(-50%,130%);opacity:0;transition:transform .3s ease,opacity .3s ease;font-weight:800;text-align:center}
-    .toast.show{transform:translate(-50%,0);opacity:1}
-    .confetti{pointer-events:none;position:fixed;inset:0;z-index:90;overflow:hidden}
-    .confetti i{position:absolute;top:-20px;width:10px;height:18px;border-radius:3px;animation:fall 2.2s linear forwards}
-    @keyframes fall{to{transform:translate(var(--drift),110vh) rotate(720deg);opacity:.9}}
+@media (max-width:360px){
+  .brand span:last-child{display:none}
+  .nav{padding-left:8px}
+  .hero h1{font-size:48px}
+  .plans{grid-template-columns:1fr}
+  .plans label{min-height:auto}
+  .count-unit strong{font-size:23px}
+  .count-unit span{font-size:8px}
+}
 
-    @media(max-width:980px){
-      .hero{grid-template-columns:1fr}.hero-copy{padding:42px 30px}.hero-visual{min-height:430px}
-      .album-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.album-shot,.album-shot:nth-child(1){grid-column:auto;min-height:190px}
-      .topbar{display:grid}.quick-actions{justify-content:flex-start}
-      .section-layout,.section.reverse .section-layout{grid-template-columns:1fr}.section-photo,.section.reverse .section-photo{order:-1;min-height:220px}
-      .fun-zone{grid-template-columns:1fr}
-    }
-    @media(max-width:680px){
-      .page{width:min(100% - 16px,1180px);padding-top:8px}.hero{border-radius:24px}.hero-copy{padding:28px 18px}.hero-visual{min-height:330px}
-      .album-strip{gap:8px;margin-top:10px}.album-shot{min-height:135px;border-radius:18px}
-      h1{font-size:clamp(3rem,17vw,5.2rem)}.hero-actions .btn{width:100%}      .quick-actions .btn{flex:1 1 calc(50% - 10px)}
-      .section{border-radius:23px}.section-content{padding:17px}.section-photo{min-height:180px}.section-head{grid-template-columns:50px 1fr}.section-head .btn{grid-column:1/-1;width:100%}.section-icon{width:50px;height:50px;border-radius:15px;font-size:1.5rem}.items{grid-template-columns:1fr}.fun-card{padding:20px}
-    }
-    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
-  </style>
-</head>
-<body>
-  <div class="page">
-    <header class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow">⛺ Рассказань • чек-лист</div>
-        <h1>Ты точно всё взял?</h1>
-        <p class="hero-line">Собраться в Рассказань — это почти отдельный вид искусства.</p>
-        <div class="hero-actions">
-          <button class="btn btn-primary" id="startBtn" type="button">Начать собираться</button>
-          <button class="btn btn-light phrase-trigger" data-kind="ready" type="button">Я уже почти готов</button>
+@media (min-width:821px){
+  .topic-strip,.photo,.card,.challenge,.band-card,.form-card,.summary,.countdown-card{will-change:transform}
+}
+
+</style></head><body>
+<nav class="nav"><a class="brand" href="#top"><span class="mark serif">М</span><span>Рассказань · 2026</span></a><div class="navlinks"><a href="#about">О выезде</a><a href="#memories">Прошлый год</a><a href="#register">Регистрация</a><a class="btn btn-primary cta" href="#register">Поехать</a></div></nav>
+<header class="hero" id="top"><div class="container hero-grid"><div><div class="meta"><span class="pill">📍 Рассказань</span><span class="pill">📅 29 июля — 2 августа</span><span class="pill">13+</span></div><div class="eyebrow">Христианский молодёжный выезд</div><h1 class="serif">Мудрость<br><em>гласит…</em></h1><p>Каждый день мы принимаем множество решений: что сказать, с кем дружить, как реагировать на обиду, куда тратить деньги, кого слушать и как строить планы. Но всегда ли мы поступаем мудро?</p><div class="hero-actions"><a class="btn btn-primary" href="#register">Заполнить регистрацию →</a><a class="btn btn-ghost" href="#about">Подробнее</a></div></div><aside class="glass challenge"><div class="eyebrow">Ну что, друг?</div><h3>Ты готов к приключениям?</h3><p id="challengeText">Тебя ждут несколько прекрасных дней: проповеди, пение, искреннее общение, речка, волейбол и вечерние костры.</p><div class="buttons"><button class="btn btn-primary" id="yesBtn" type="button">Да</button><button class="btn btn-ghost" id="noBtn" type="button">Нет</button></div><div class="challenge-response" id="challengeResponse" aria-live="polite"></div></aside></div></header>
+<main>
+<section id="about">
+  <div class="container">
+    <div class="about-overview">
+      <div class="story-intro">
+        <div class="eyebrow">О теме выезда</div>
+        <h2 class="section-title serif">Мудрость для реальной жизни</h2>
+        <p class="section-lead">На выезде мы обратимся к книге Притчей и поговорим о том, как Божья мудрость помогает в реальной жизни.</p>
+      </div>
+      <div class="copy">
+        <p>Нас ждут практичные наставления о словах, дружбе, гневе, лени, гордости, финансах, планировании и других важных вопросах.</p>
+        <p>Это возможность на несколько дней выйти из привычного ритма, отдохнуть от суеты, услышать Божье Слово и провести время в добром христианском общении. Возможно, ради этих дней стоит взять отпуск, отгул или приехать хотя бы на часть выезда.</p>
+        <p class="quote serif">Иногда важно остановиться, чтобы услышать то, что легко пропустить в повседневной суете.</p>
+      </div>
+    </div>
+
+    <div class="topics-wrap">
+      <div class="topics-heading">
+        <div>
+          <div class="eyebrow">Темы встреч</div>
+          <h3 class="topics-title serif">Восемь разговоров<br>о мудрой жизни</h3>
         </div>
+        <p class="topics-intro">Просто, честно и по книге Притчей — о решениях, отношениях и характере.</p>
       </div>
-      <div class="hero-visual"></div>
-    </header>
 
-    <div class="album-strip" aria-label="Фотографии с прошлой Рассказани">
-      <div class="album-shot" style="--shot:url('assets/album-1.webp')"></div>
-      <div class="album-shot" style="--shot:url('assets/album-2.webp')"></div>
-      <div class="album-shot" style="--shot:url('assets/album-3.webp')"></div>
-      <div class="album-shot" style="--shot:url('assets/album-4.webp')"></div>
-    </div>
-
-    <div class="topbar" id="checklist">
-      <div class="progress-wrap"><div class="progress-meta"><span>Собрано</span><strong id="progressText">0 из 34</strong></div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div></div>
-      <div class="quick-actions">
-        <button class="btn btn-soft phrase-trigger" data-kind="forgot" type="button">Что я забыл?</button>
-        <button class="btn btn-soft phrase-trigger" data-kind="socks" type="button">Проверить носки</button>
-        <button class="btn btn-dark" id="randomCheckBtn" type="button">Случайная проверка</button>
+      <div class="topics topics-strips">
+        <article class="topic topic-strip"><span class="topic-number">01</span><div class="topic-main"><span class="topic-kicker">Мудрость гласит:</span><h4>бойся Бога</h4></div><span class="topic-subtitle">мудрость и страх</span></article>
+        <article class="topic topic-strip"><span class="topic-number">02</span><div class="topic-main"><span class="topic-kicker">Мудрость гласит:</span><h4>не ленись</h4></div><span class="topic-subtitle">мудрость и лень</span></article>
+        <article class="topic topic-strip"><span class="topic-number">03</span><div class="topic-main"><span class="topic-kicker">Мудрость гласит:</span><h4>храни свои уста</h4></div><span class="topic-subtitle">мудрость и речь</span></article>
+        <article class="topic topic-strip"><span class="topic-number">04</span><div class="topic-main"><span class="topic-kicker">Мудрость гласит:</span><h4>выбирай друзей мудро</h4></div><span class="topic-subtitle">мудрость и дружба</span></article>
+        <article class="topic topic-strip"><span class="topic-number">05</span><div class="topic-main"><span class="topic-kicker">Мудрость гласит:</span><h4>обуздывай гнев</h4></div><span class="topic-subtitle">мудрость и гнев</span></article>
+        <article class="topic topic-strip"><span class="topic-number">06</span><div class="topic-main"><span class="topic-kicker">Мудрость гласит:</span><h4>распоряжайся с умом</h4></div><span class="topic-subtitle">мудрость и финансы</span></article>
+        <article class="topic topic-strip"><span class="topic-number">07</span><div class="topic-main"><span class="topic-kicker">Мудрость гласит:</span><h4>не превозносись</h4></div><span class="topic-subtitle">мудрость и гордость</span></article>
+        <article class="topic topic-strip"><span class="topic-number">08</span><div class="topic-main"><span class="topic-kicker">Мудрость гласит:</span><h4>планируй мудро</h4></div><span class="topic-subtitle">мудрость и планирование</span></article>
       </div>
     </div>
-
-    <main>
-      <section class="section" style="--photo:url('assets/bible.webp')"><div class="section-layout"><div class="section-content">
-        <div class="section-head"><div class="section-icon" style="--tone:#ead9b9">❤️</div><div><h2>Сердце, Слово и самое главное</h2><p class="section-sub">То, без чего даже идеальная сумка не спасёт.</p></div><button class="btn btn-soft phrase-trigger" data-kind="heart" type="button">Проверить настрой</button></div>
-        <div class="items">
-          <label class="check"><input type="checkbox" data-id="1"><span><span class="item-title"><span class="item-num">01</span>Сердце готовое</span><span class="item-note">Послужить, радоваться общению и наслаждаться красотой Божьего творения :))</span></span></label>
-          <label class="check"><input type="checkbox" data-id="2"><span><span class="item-title"><span class="item-num">02</span>Библия, книга, блокнот и письменные принадлежности</span><span class="item-note">Ручку и карандаш лучше взять по два — для ближнего.</span></span></label>
-        </div></div><div class="section-photo"></div></div></section>
-
-      <section class="section reverse" style="--photo:url('assets/tech.webp')"><div class="section-layout"><div class="section-content">
-        <div class="section-head"><div class="section-icon" style="--tone:#d3e0d7">📱</div><div><h2>Документы, деньги и техника</h2><p class="section-sub">Чтобы телефон жил, а вы не вспоминали паспорт уже в дороге.</p></div><button class="btn btn-soft phrase-trigger" data-kind="battery" type="button">Узнать судьбу зарядки</button></div>
-        <div class="items">
-          <label class="check"><input type="checkbox" data-id="3"><span><span class="item-title"><span class="item-num">03</span>Паспорт и медицинский полис</span><span class="item-note">Подойдут копии или фотографии документов.</span></span></label>
-          <label class="check"><input type="checkbox" data-id="4"><span><span class="item-title"><span class="item-num">04</span>Телефон, зарядка и маленькая сумочка</span><span class="item-note">Чтобы телефон не путешествовал отдельно от хозяина.</span></span></label>
-          <label class="check"><input type="checkbox" data-id="5"><span><span class="item-title"><span class="item-num">05</span>Powerbank и подходящий шнур</span><span class="item-note">Powerbank без шнура — просто тяжёлый сувенир.</span></span></label>
-          <label class="check"><input type="checkbox" data-id="6"><span><span class="item-title"><span class="item-num">06</span>Банковская карта и наличные</span><span class="item-note">Пусть будут оба варианта.</span></span></label>
-          <label class="check"><input type="checkbox" data-id="29"><span><span class="item-title"><span class="item-num">29</span>Согласие родителей и доверенность</span><span class="item-note">Для участников младше 18 лет.</span></span></label>
-        </div></div><div class="section-photo"></div></div></section>
-
-      <section class="section" style="--photo:url('assets/health.webp')"><div class="section-layout"><div class="section-content">
-        <div class="section-head"><div class="section-icon" style="--tone:#e8ceca">🩹</div><div><h2>Аптечка и защита</h2><p class="section-sub">Лучше привезти и не использовать, чем наоборот.</p></div><button class="btn btn-soft phrase-trigger" data-kind="mosquito" type="button">Спросить комара</button></div>
-        <div class="items">
-          <label class="check"><input type="checkbox" data-id="7"><span><span class="item-title"><span class="item-num">07</span>Личные медикаменты</span><span class="item-note">Смекта, средства для желудка, носа и горла. <span class="urgent">Обязательно препараты от хронических заболеваний.</span></span></span></label>
-          <label class="check"><input type="checkbox" data-id="21"><span><span class="item-title"><span class="item-num">21</span>Головной убор</span><span class="item-note">Солнечный удар — совсем не развлечение.</span></span></label>
-          <label class="check"><input type="checkbox" data-id="22"><span><span class="item-title"><span class="item-num">22</span>Крем от солнца</span><span class="item-note">Особенно для тех, кто быстро поджаривается.</span></span></label>
-          <label class="check"><input type="checkbox" data-id="23"><span><span class="item-title"><span class="item-num">23</span>Крем после загара</span><span class="item-note">Кому нужен — тот поймёт.</span></span></label>
-          <label class="check"><input type="checkbox" data-id="27"><span><span class="item-title"><span class="item-num">27</span>Средство от комаров</span><span class="item-note">Не становитесь главным блюдом вечера.</span></span></label>
-          <label class="check"><input type="checkbox" data-id="33"><span><span class="item-title"><span class="item-num">33</span>Нарукавники для детей</span><span class="item-note urgent">Все дети купаются только в нарукавниках.</span></span></label>
-        </div></div><div class="section-photo"></div></div></section>
-
-      <section class="section reverse" style="--photo:url('assets/light.webp')"><div class="section-layout"><div class="section-content">
-        <div class="section-head"><div class="section-icon" style="--tone:#d7e0e8">🔦</div><div><h2>Свет и свободное время</h2><p class="section-sub">Чтобы вечером было видно настольную игру, а не только звёзды.</p></div><button class="btn btn-soft phrase-trigger" data-kind="flashlight" type="button">Проверить фонарик</button></div>
-        <div class="items"><label class="check"><input type="checkbox" data-id="8"><span><span class="item-title"><span class="item-num">08</span>Отдельный фонарик</span><span class="item-note">Телефон за это скажет спасибо и дольше проживёт.</span></span></label><label class="check"><input type="checkbox" data-id="9"><span><span class="item-title"><span class="item-num">09</span>Досуг</span><span class="item-note">Настольные игры, материалы для рисования и другое.</span></span></label></div>
-      </div><div class="section-photo"></div></div></section>
-
-      <section class="section" style="--photo:url('assets/clothes.webp')"><div class="section-layout"><div class="section-content">
-        <div class="section-head"><div class="section-icon" style="--tone:#d7e3cf">👕</div><div><h2>Одежда и обувь</h2><p class="section-sub">Носки считаются не по вдохновению, а по дням.</p></div><button class="btn btn-soft phrase-trigger" data-kind="weather" type="button">Вызвать погоду на разговор</button></div>
-        <div class="items">
-          <label class="check"><input type="checkbox" data-id="10"><span><span class="item-title"><span class="item-num">10</span>Спортивная обувь</span><span class="item-note">Для футбола, волейбола и других подвигов.</span></span></label>
-          <label class="check"><input type="checkbox" data-id="11"><span><span class="item-title"><span class="item-num">11</span>Шлёпки</span><span class="item-note">Для пляжа, душа и дождливой погоды.</span></span></label>
-          <label class="check"><input type="checkbox" data-id="12"><span><span class="item-title"><span class="item-num">12</span>Посмотреть прогноз погоды</span><span class="item-note">Да, это полноценный пункт чек-листа!</span></span></label>
-          <label class="check"><input type="checkbox" data-id="13"><span><span class="item-title"><span class="item-num">13</span>Дождевик и зонтик</span><span class="item-note">Полезнее, чем философски мокнуть.</span></span></label>
-          <label class="check"><input type="checkbox" data-id="14"><span><span class="item-title"><span class="item-num">14</span>Одежда в дорогу туда и обратно</span></span></label>
-          <label class="check"><input type="checkbox" data-id="15"><span><span class="item-title"><span class="item-num">15</span>Одежда на каждый день</span></span></label>
-          <label class="check"><input type="checkbox" data-id="16"><span><span class="item-title"><span class="item-num">16</span>Тёплая одежда на вечер</span><span class="item-note">Джинсы, толстовка с капюшоном, ветровка и пара носков на день.</span></span></label>
-          <label class="check"><input type="checkbox" data-id="17"><span><span class="item-title"><span class="item-num">17</span>Тёплая одежда для сна</span><span class="item-note">Удобная одежда, тёплые носки и при необходимости шапка.</span></span></label>
-        </div></div><div class="section-photo"></div></div></section>
-
-      <section class="section reverse" style="--photo:url('assets/hygiene.webp')"><div class="section-layout"><div class="section-content">
-        <div class="section-head"><div class="section-icon" style="--tone:#ead6bc">🥔</div><div><h2>Гигиена, вода и легендарная картошка</h2><p class="section-sub">Кружка — обязательна. Овощечистка — почти почётная должность.</p></div><button class="btn btn-soft phrase-trigger" data-kind="mug" type="button">Проверить кружку</button></div>
-        <div class="items">
-          <label class="check"><input type="checkbox" data-id="18"><span><span class="item-title"><span class="item-num">18</span>Овощечистка</span><span class="item-note">Картошка — это вкусно!</span></span></label>
-          <label class="check"><input type="checkbox" data-id="19"><span><span class="item-title"><span class="item-num">19</span>Полотенце для душа</span></span></label>
-          <label class="check"><input type="checkbox" data-id="20"><span><span class="item-title"><span class="item-num">20</span>Полотенце для пляжа</span></span></label>
-          <label class="check"><input type="checkbox" data-id="24"><span><span class="item-title"><span class="item-num">24</span>Зубная щётка, паста и зубная нить</span></span></label>
-          <label class="check"><input type="checkbox" data-id="25"><span><span class="item-title"><span class="item-num">25</span>Шампунь и гель для душа</span></span></label>
-          <label class="check"><input type="checkbox" data-id="26"><span><span class="item-title"><span class="item-num">26</span>Стиральный порошок</span><span class="item-note">Если планируете стирать.</span></span></label>
-          <label class="check"><input type="checkbox" data-id="28"><span><span class="item-title"><span class="item-num">28</span>Чашка или термокружка и бутылочка для воды</span><span class="item-note">Чай в ладошках — неудобно.</span></span></label>
-          <label class="check"><input type="checkbox" data-id="30"><span><span class="item-title"><span class="item-num">30</span>Беруши и маска для сна</span><span class="item-note">Для тех, кому мешают шум и слишком активный рассвет.</span></span></label>
-          <label class="check"><input type="checkbox" data-id="31"><span><span class="item-title"><span class="item-num">31</span>Влажные салфетки</span><span class="item-note">Лучше большая пачка. «Душ из салфеток» — только крайняя мера :)</span></span></label>
-        </div></div><div class="section-photo"></div></div></section>
-
-      <section class="section" style="--photo:url('assets/tent.webp')"><div class="section-layout"><div class="section-content">
-        <div class="section-head"><div class="section-icon" style="--tone:#ddd3e8">⛺</div><div><h2>Палаточный финал</h2><p class="section-sub">Осталось взять дом и тёплое место для сна.</p></div><button class="btn btn-soft phrase-trigger" data-kind="tent" type="button">Спросить палатку</button></div>
-        <div class="items"><label class="check"><input type="checkbox" data-id="32"><span><span class="item-title"><span class="item-num">32</span>Палатка</span><span class="item-note">Проверьте комплектность заранее, а не под звёздами.</span></span></label><label class="check"><input type="checkbox" data-id="34"><span><span class="item-title"><span class="item-num">34</span>Спальник</span><span class="item-note">Проверьте, что он чистый, тёплый и точно ваш.</span></span></label></div>
-      </div><div class="section-photo"></div></div></section>
-
-      <div class="fun-zone">
-        <section class="fun-card dark"><h2>Кнопки великой проверки</h2><p>Нажимай смело. Иногда сайт знает о твоей сумке больше, чем ты.</p><div class="fun-buttons"><button class="btn btn-primary phrase-trigger" data-kind="ready" type="button">Мне уже можно ехать?</button><button class="btn btn-light phrase-trigger" data-kind="forgot" type="button">Я точно ничего не забыл?</button><button class="btn btn-light phrase-trigger" data-kind="potato" type="button">Проверить картошку</button><button class="btn btn-light phrase-trigger" data-kind="mystery" type="button">Таинственная кнопка</button></div><div class="phrase-box" id="phraseBox" aria-live="polite">Нажми любую кнопку — здесь появится важная, почти научная фраза.</div></section>
-        <section class="fun-card paper"><h2>Сигналы неправильной сборки</h2><p>Обнаружил хотя бы один — возвращайся к чек-листу.</p><div class="mini-list"><div class="mini">🧥 Взял три толстовки, но забыл зубную щётку.</div><div class="mini">🔌 Взял powerbank, но не взял шнур.</div><div class="mini">☕ Взял чай, но забыл кружку.</div><div class="mini">🧦 Сказал: «Носки там как-нибудь найдутся».</div></div></section>
-      </div>
-    </main>
-
-    <footer class="footer"><h2 id="finalTitle">До полной готовности ещё 34 пункта</h2><p id="finalText">Ставь галочки — прогресс сохранится на этом устройстве.</p><button class="btn btn-primary" id="resetBtn" type="button">Сбросить все галочки</button></footer>
   </div>
+</section>
+<section id="memories"><div class="container"><div class="eyebrow gallery-label">Как это было в прошлом году</div><div class="past-gallery"><div class="gallery-column"><figure class="photo"><img src="assets/past-1.webp" alt="Небо над базой" loading="lazy"></figure><figure class="photo"><img src="assets/past-2.webp" alt="Большой костёр" loading="lazy"></figure><figure class="photo"><img src="assets/past-3.webp" alt="Волейбол на базе" loading="lazy"></figure><figure class="photo"><img src="assets/past-11.webp" alt="Поляна на базе перед дождём" loading="lazy"></figure></div><div class="gallery-column"><figure class="photo"><img src="assets/past-4.webp" alt="Пение на выезде" loading="lazy"></figure><figure class="photo"><img src="assets/past-5.webp" alt="Проповедь" loading="lazy"></figure><figure class="photo"><img src="assets/past-6.webp" alt="Ночной волейбол" loading="lazy"></figure><figure class="photo"><img src="assets/past-7.webp" alt="Вечер на базе" loading="lazy"></figure></div><div class="gallery-column"><figure class="photo"><img src="assets/past-8.webp" alt="Пение у костра" loading="lazy"></figure><figure class="photo"><img src="assets/past-9.webp" alt="Общение на сцене" loading="lazy"></figure><figure class="photo"><img src="assets/past-10.webp" alt="Палатки на закате" loading="lazy"></figure></div></div></div></section>
+<section class="band"><div class="container"><div class="glass band-card"><div><div class="eyebrow">Нас ждут</div><h2 class="section-title serif" style="font-size:clamp(46px,5vw,68px);margin-top:12px">Несколько прекрасных дней</h2></div><div class="band-copy"><p class="section-lead">Проповеди и совместное изучение Библии, пение и молитва, искреннее общение, игры, речка и отдых на природе, волейбол и другие активности, вечерние костры.</p><div class="activities"><span class="act">📖 Проповеди</span><span class="act">🎶 Пение</span><span class="act">🙏 Молитва</span><span class="act">🎲 Игры</span><span class="act">🏐 Волейбол</span><span class="act">🌿 Речка и природа</span><span class="act">🔥 Вечерние костры</span></div></div></div></div></section>
+<section><div class="container info-grid"><article class="glass card"><div class="eyebrow">Пожертвование</div><h3 class="serif" style="font-size:34px;margin:.3em 0">Краткая информация</h3><p class="muted">Добровольное пожертвование за участие:</p><div class="price" data-base-price="2500">2 500 ₽</div><p>Оплата переводом: <strong data-base-price="2500">2 500 ₽</strong><br>Оплата наличными на месте: <strong data-base-price="2500">2 500 ₽</strong></p><div class="family"><div><span>Первый</span><strong data-base-price="2500">2 500 ₽</strong></div><div><span>Второй</span><strong data-base-price="2000">2 000 ₽</strong></div><div><span>Третий и далее</span><strong data-base-price="1500">1 500 ₽</strong></div></div></article><article class="glass card"><div class="eyebrow">Где это</div><h3 class="serif" style="font-size:34px;margin:.3em 0">Село Рассказань</h3><div class="map"><iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=42.610%2C51.535%2C42.705%2C51.595&layer=mapnik&marker=51.566549%2C42.655324"></iframe></div></article></div></section>
+<section id="register"><div class="container"><div class="eyebrow">Регистрация</div><h2 class="section-title serif">Присоединяйся</h2><p class="section-lead">Можно зарегистрировать себя, друзей или нескольких членов семьи одной заявкой.</p><div class="countdown-grid"><article class="countdown-card price-clock"><div class="eyebrow">Успей по действующей цене</div><div class="countdown-title">До повышения цены</div><div class="countdown" data-countdown="price"><div class="count-unit"><strong data-part="hours">000</strong><span>часов</span></div><div class="count-unit"><strong data-part="minutes">00</strong><span>минут</span></div><div class="count-unit"><strong data-part="seconds">00</strong><span>секунд</span></div></div><div class="countdown-deadline">До 25 июля 2026 года, 00:00 по Саратовскому времени</div><div class="countdown-status" data-status="price">Все тарифы повышены на 300 ₽.</div></article><article class="countdown-card close-clock"><div class="eyebrow">Последний срок</div><div class="countdown-title">До конца регистрации</div><div class="countdown" data-countdown="registration"><div class="count-unit"><strong data-part="hours">000</strong><span>часов</span></div><div class="count-unit"><strong data-part="minutes">00</strong><span>минут</span></div><div class="count-unit"><strong data-part="seconds">00</strong><span>секунд</span></div></div><div class="countdown-deadline">До 28 июля 2026 года, 00:00 по Саратовскому времени</div><div class="countdown-status" data-status="registration">Регистрация завершена.</div></article></div><div class="form-layout"><form class="glass form-card" id="form" enctype="multipart/form-data"><div class="participants-head"><div><h3>Участники</h3><div class="hint">Добавьте всех участников, которых хотите зарегистрировать одной заявкой.</div></div><button class="btn btn-ghost add-participant" id="addParticipant" type="button">+ Добавить участника</button></div><div id="participants"></div><div class="form-grid"><div class="field"><label>Контактный номер телефона</label><input id="phone" name="phone" type="tel" required placeholder="+7 (___) ___-__-__"></div><div class="field"><label>Город</label><input name="city" value="Саратов" required></div></div><div class="field"><label>Церковь</label><input name="church" value="Вокзальная" required><div class="hint">Можно указать свою церковь.</div></div><div class="field"><div class="label">Даты участия</div><div class="plans"><div><input checked id="p1" type="radio" name="plan" value="29 июля — 2 августа" data-label="29 июля — 2 августа" data-price="2500"><label for="p1"><strong>Все дни</strong><span>29 июля — 2 августа</span><b>2 500 ₽</b></label></div><div><input id="p2" type="radio" name="plan" value="30 июля — 2 августа" data-label="30 июля — 2 августа" data-price="1900"><label for="p2"><strong>4 дня</strong><span>30 июля — 2 августа</span><b>1 900 ₽</b></label></div><div><input id="p3" type="radio" name="plan" value="31 июля — 2 августа" data-label="31 июля — 2 августа" data-price="1300"><label for="p3"><strong>3 дня</strong><span>31 июля — 2 августа</span><b>1 300 ₽</b></label></div><div><input id="p4" type="radio" name="plan" value="1–2 августа" data-label="1–2 августа" data-price="900"><label for="p4"><strong>2 дня</strong><span>1–2 августа</span><b>900 ₽</b></label></div></div></div><details class="benefits-panel" id="benefitsPanel"><summary><span>Льгота многодетной семьи</span><small>необязательно</small></summary><div class="benefits-content"><p class="benefits-intro">Откройте этот раздел только для тех участников, которым нужна льготная стоимость.</p><div class="benefit-rows" id="benefitRows"></div></div></details><div class="field"><div class="label">Способ оплаты</div><div class="seg pay"><div><input checked id="pay1" type="radio" name="pay" value="Перевод"><label id="payTransferLabel" for="pay1">Перевод</label></div><div><input id="pay2" type="radio" name="pay" value="Наличными"><label id="payCashLabel" for="pay2">Наличными</label></div></div></div><div class="field" id="transferBlock"><label>Подтверждение перевода</label><div class="upload"><div style="margin-bottom:8px"><strong>Перевод по номеру: 8 964 998 66 42 · Альфа-Банк · Павел Михайлович С.</strong></div><input id="paymentScreenshot" name="payment_screenshot" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif"></div><div class="hint" style="margin-top:8px">После перевода прикрепи скриншот.</div></div><div class="field"><label>Комментарий</label><textarea name="comment" placeholder="Можно указать важные детали"></textarea></div><label class="consent-row"><input id="personalDataConsent" name="personalDataConsent" type="checkbox" required><span>Я даю согласие на <strong>сбор и обработку персональных данных</strong>, указанных в форме, для организации выезда и связи со мной.</span></label><button class="btn btn-primary" id="submitButton" style="width:100%" type="submit">Отправить регистрацию</button><div class="status" id="status"></div></form><aside class="glass summary"><div class="eyebrow">Итог</div><h3 style="font-size:28px;margin:.4em 0 0">Общая регистрация</h3><div class="sum-line"><span>Участников</span><strong id="sumCount">1</strong></div><div class="sum-line"><span>Даты</span><strong id="sumDates">29 июля — 2 августа</strong></div><div class="sum-line"><span>Способ</span><strong id="sumPay">Перевод</strong></div><div class="breakdown" id="breakdown"></div><div class="total"><span>К оплате</span><strong id="sumTotal">2 500 ₽</strong></div><p class="note" id="sumNote">Для каждого участника можно выбрать обычный или льготный тариф.</p></aside></div></div></section>
+</main><footer><div class="container" style="display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap"><div><div class="footer-title serif">Мудрость гласит…</div><div>Рассказань · 29 июля — 2 августа</div></div><div>Рассказань ждёт. А мудрость уже говорит — осталось услышать.</div></div></footer>
+<script src="config.js"></script>
+<script>
+const money=n=>new Intl.NumberFormat('ru-RU').format(n)+' ₽';
+const participantsEl=document.getElementById('participants');
+const submitButton=document.getElementById('submitButton');
+let participantCounter=0;
+let registrationClosed=false;
+const PRICE_INCREASE_AT_MS=new Date('2026-07-25T00:00:00+04:00').getTime();
+const PRICE_INCREASE_AMOUNT=300;
+let priceIncreaseApplied=Date.now()>=PRICE_INCREASE_AT_MS;
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div><div class="confetti" id="confetti" aria-hidden="true"></div>
-  <script>
-    const checks=[...document.querySelectorAll('.check input')],progressText=document.getElementById('progressText'),progressBar=document.getElementById('progressBar'),finalTitle=document.getElementById('finalTitle'),finalText=document.getElementById('finalText'),phraseBox=document.getElementById('phraseBox'),toast=document.getElementById('toast'),confetti=document.getElementById('confetti'),STORAGE_KEY='rasskazan-checklist-v1';
-    const phrases={ready:['Почти. Сначала честно ответь: кружка точно в сумке?','Если документы, носки и хорошее настроение на месте — уже очень похоже на готовность.','Морально — да. Физически — проверь палатку и зарядку.','Можно ехать, но сумка просит ещё одну контрольную проверку.'],forgot:['Скорее всего то, о чём ты сказал: «Это я положу потом».','Статистика утверждает: чаще всего забывают зарядку, кружку или здравый смысл.','Загляни в отдел документов. Паспорт любит оставаться дома.','Проверь полотенце. Оно умеет становиться невидимым перед поездкой.'],socks:['Носки обнаружены? Тогда цивилизация спасена.','Пара на день — это не роскошь, а мудрое планирование.','Один носок без второго — не команда. Проверь комплект.','Носки одобряют твою подготовку, но просят взять запас.'],heart:['Сердце готово служить — главный пункт уже почти собран.','Хорошее настроение найдено. Осталось не забыть делиться им.','Настрой правильный: радоваться, помогать и не спорить из-за последней печеньки.'],battery:['Зарядка есть? Теперь убедись, что она именно от твоего телефона.','Powerbank без шнура грустит и ничего не заряжает.','Телефон готов к путешествию. А паспорт?'],mosquito:['Комар сообщил: без средства от насекомых он ждёт тебя особенно сильно.','Местные комары уже составляют меню. Не входи в него.','Средство от комаров — маленький флакон большого спокойствия.'],flashlight:['Фонарик светит. Значит, ночью у палатки есть шанс быть найденной.','Телефон просит не работать фонариком всю ночь.','Проверка фонарика пройдена, если батарейки тоже едут.'],weather:['Прогноз погоды не управляет дождём, но управляет твоим дождевиком.','Погода сказала: «Возьми и футболку, и толстовку — разберёмся на месте».','Зонт не гарантирует солнце, но сильно повышает уверенность.'],mug:['Кружка на месте — чайная безопасность обеспечена.','Термокружка официально назначена хранителем вечернего чая.','Без кружки чай превращается в теоретическое понятие.'],tent:['Палатка просит проверить колышки до приезда, а не после заката.','Палатка есть. Теперь убедись, что она не состоит только из чехла.','Дом взят. Осталось не забыть, кто умеет его ставить.'],potato:['Картошка одобряет наличие овощечистки.','Овощечистка — маленький инструмент большой кухни.','Если картошка вкусная, значит, кто-то всё-таки взял овощечистку.'],mystery:['Таинственная кнопка считает, что тебе нужно проверить документы.','Секрет раскрыт: возьми ещё одну ручку для ближнего.','Мудрость гласит: положил вещь в сумку — поставь галочку.','Никакой магии. Просто проверь зарядку ещё раз.']};
-    const pick=list=>list[Math.floor(Math.random()*list.length)];
-    function showPhrase(kind){let text;if(kind==='ready'){const done=checks.filter(c=>c.checked).length;text=done===checks.length?'Да! Всё собрано. Даже сайт больше не знает, к чему придраться.':done>=27?`Почти готов! Осталось ${checks.length-done}. Сумка уже начинает гордиться тобой.`:pick(phrases.ready)}else{text=pick(phrases[kind]||phrases.mystery)}phraseBox.textContent=text;showToast(text)}
-    function showToast(text){toast.textContent=text;toast.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>toast.classList.remove('show'),3000)}
-    function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify(Object.fromEntries(checks.map(c=>[c.dataset.id,c.checked]))))}
-    function load(){try{const state=JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}');checks.forEach(c=>c.checked=Boolean(state[c.dataset.id]))}catch(e){}updateProgress(false)}
-    function updateProgress(celebrate=true){const done=checks.filter(c=>c.checked).length,total=checks.length,left=total-done,pct=Math.round(done/total*100);progressText.textContent=`${done} из ${total}`;progressBar.style.width=`${pct}%`;if(done===total){finalTitle.textContent='Готово! Можно ехать в Рассказань 🎉';finalText.textContent='Сумка собрана, кружка найдена, носки посчитаны.';if(celebrate)launchConfetti()}else if(done>=25){finalTitle.textContent=`Почти готово — осталось ${left}`;finalText.textContent='Финишная прямая. Не расслабляйся рядом с разделом документов.'}else{finalTitle.textContent=`До полной готовности ещё ${left}`;finalText.textContent='Ставь галочки — прогресс сохранится на этом устройстве.'}}
-    function launchConfetti(){const colors=['#d4a855','#c96f42','#93b39b','#f4efe4'];for(let i=0;i<70;i++){const piece=document.createElement('i');piece.style.left=Math.random()*100+'vw';piece.style.background=colors[Math.floor(Math.random()*colors.length)];piece.style.setProperty('--drift',(Math.random()*220-110)+'px');piece.style.animationDelay=Math.random()*.5+'s';confetti.appendChild(piece);setTimeout(()=>piece.remove(),3000)}}
-    checks.forEach(c=>c.addEventListener('change',()=>{save();updateProgress()}));document.querySelectorAll('.phrase-trigger').forEach(btn=>btn.addEventListener('click',()=>showPhrase(btn.dataset.kind)));
-    document.getElementById('startBtn').addEventListener('click',()=>{document.getElementById('checklist').scrollIntoView({behavior:'smooth',block:'start'});showToast('Начинаем! Первым делом проверь сердце, документы и кружку.')});
-    document.getElementById('randomCheckBtn').addEventListener('click',()=>{const unchecked=checks.filter(c=>!c.checked);if(!unchecked.length){showToast('Нечего проверять: все 34 пункта уже отмечены!');launchConfetti();return}const target=unchecked[Math.floor(Math.random()*unchecked.length)];target.closest('.check').scrollIntoView({behavior:'smooth',block:'center'});const title=target.closest('.check').querySelector('.item-title').innerText.replace(/\s+/g,' ').trim();showToast(`Случайная проверка выбрала: ${title}`)});
-    document.getElementById('resetBtn').addEventListener('click',()=>{if(confirm('Точно снять все галочки и начать сборы заново?')){checks.forEach(c=>c.checked=false);save();updateProgress(false);showToast('Галочки сброшены. Сумка снова смотрит на тебя с надеждой.')}});load();
-  </script>
-</body>
-</html>
+const FAMILY_TIERS={
+  standard:{label:'Обычный тариф',baseCap:Infinity},
+  second:{label:'Второй член многодетной семьи',baseCap:2000},
+  thirdPlus:{label:'Третий или последующий член многодетной семьи',baseCap:1500}
+};
+
+function currentIncrease(){return Date.now()>=PRICE_INCREASE_AT_MS?PRICE_INCREASE_AMOUNT:0}
+function currentTierCap(tier){
+  const cap=FAMILY_TIERS[tier]?.baseCap??Infinity;
+  return Number.isFinite(cap)?cap+currentIncrease():Infinity;
+}
+function currentPlanPrice(plan){return Number(plan?.dataset.price||2500)+currentIncrease()}
+function refreshDisplayedPrices(){
+  document.querySelectorAll('input[name="plan"]').forEach(input=>{
+    const price=currentPlanPrice(input);
+    const priceTag=input.parentElement?.querySelector('b');
+    if(priceTag)priceTag.textContent=money(price);
+  });
+  document.querySelectorAll('[data-base-price]').forEach(element=>{
+    element.textContent=money(Number(element.dataset.basePrice)+currentIncrease());
+  });
+}
+
+function participantTemplate(index){return `<div class="participant-card" data-participant="${index}"><input type="hidden" data-role="family-tier" value="standard"><div class="participant-top"><div class="participant-title">Участник ${index}</div><div class="participant-price" data-role="participant-price">2 500 ₽</div><button class="remove-participant" type="button">Удалить</button></div><div class="form-grid"><div class="field"><label>ФИО</label><input name="participants[${index}][name]" required placeholder="Иван Иванов"></div><div class="field"><label>Количество лет</label><input name="participants[${index}][age]" type="number" min="13" max="99" required placeholder="18"></div></div><div class="form-grid"><div class="field"><div class="label">Есть своя палатка?</div><div class="seg"><div><input checked id="tent-${index}-yes" type="radio" name="participants[${index}][tent]" value="Да"><label for="tent-${index}-yes">Да</label></div><div><input id="tent-${index}-no" type="radio" name="participants[${index}][tent]" value="Нет"><label for="tent-${index}-no">Нет</label></div></div></div><div class="field"><div class="label">Есть свой спальник?</div><div class="seg"><div><input checked id="bag-${index}-yes" type="radio" name="participants[${index}][bag]" value="Да"><label for="bag-${index}-yes">Да</label></div><div><input id="bag-${index}-no" type="radio" name="participants[${index}][bag]" value="Нет"><label for="bag-${index}-no">Нет</label></div></div></div></div></div>`}
+
+const benefitRowsEl=document.getElementById('benefitRows');
+
+function renderBenefitRows(){
+  const cards=[...participantsEl.children];
+  benefitRowsEl.innerHTML=cards.map((card,i)=>{
+    const id=card.dataset.participant;
+    const tier=card.querySelector('[data-role="family-tier"]').value;
+    const entered=card.querySelector('input[name$="[name]"]').value.trim();
+    const displayName=entered||`Участник ${i+1}`;
+    return `<div class="benefit-row" data-benefit-for="${id}"><div class="benefit-person">Участник ${i+1}<small>${escapeHtml(displayName)}</small></div><div class="family-tier-buttons"><button class="tier-btn ${tier==='second'?'active':''}" type="button" data-tier="second" aria-pressed="${tier==='second'}">Я второй член многодетной семьи</button><button class="tier-btn ${tier==='thirdPlus'?'active':''}" type="button" data-tier="thirdPlus" aria-pressed="${tier==='thirdPlus'}">Я третий или последующий член многодетной семьи</button></div><div class="tier-hint">${FAMILY_TIERS[tier].label}</div></div>`;
+  }).join('');
+  benefitRowsEl.querySelectorAll('.tier-btn').forEach(button=>button.addEventListener('click',()=>{
+    const row=button.closest('.benefit-row');
+    const card=participantsEl.querySelector(`[data-participant="${row.dataset.benefitFor}"]`);
+    const hidden=card.querySelector('[data-role="family-tier"]');
+    const next=hidden.value===button.dataset.tier?'standard':button.dataset.tier;
+    hidden.value=next;
+    renderBenefitRows();
+    updateSummary();
+  }));
+}
+
+function escapeHtml(value){return String(value).replace(/[&<>'"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]))}
+
+function bindParticipant(card){
+  card.querySelector('.remove-participant').addEventListener('click',()=>{card.remove();renumberParticipants();updateSummary()});
+  card.querySelector('input[name$="[name]"]').addEventListener('input',()=>{renderBenefitRows();updateSummary()});
+}
+
+function addParticipant(){
+  participantCounter++;
+  participantsEl.insertAdjacentHTML('beforeend',participantTemplate(participantCounter));
+  bindParticipant(participantsEl.lastElementChild);
+  renumberParticipants();
+  updateSummary();
+}
+function renumberParticipants(){
+  [...participantsEl.children].forEach((card,i)=>card.querySelector('.participant-title').textContent=`Участник ${i+1}`);
+  renderBenefitRows();
+}
+document.getElementById('addParticipant').addEventListener('click',addParticipant);
+refreshDisplayedPrices();
+addParticipant();
+
+function participantPrice(card,base){
+  const tier=card.querySelector('[data-role="family-tier"]').value;
+  return Math.min(base,currentTierCap(tier));
+}
+function calculateTotal(){
+  const plan=document.querySelector('input[name="plan"]:checked');
+  const base=currentPlanPrice(plan);
+  const rows=[...participantsEl.children].map(card=>({
+    card,
+    tier:card.querySelector('[data-role="family-tier"]').value,
+    price:participantPrice(card,base)
+  }));
+  return{base,rows,total:rows.reduce((sum,row)=>sum+row.price,0)};
+}
+function updateSummary(){
+  const plan=document.querySelector('input[name="plan"]:checked');
+  const pay=document.querySelector('input[name="pay"]:checked');
+  const calc=calculateTotal();
+  document.getElementById('sumCount').textContent=calc.rows.length;
+  document.getElementById('sumDates').textContent=plan.dataset.label;
+  document.getElementById('sumPay').textContent=pay.value;
+  document.getElementById('sumTotal').textContent=money(calc.total);
+  document.getElementById('payTransferLabel').textContent='Перевод';
+  document.getElementById('payCashLabel').textContent='Наличными';
+  document.getElementById('breakdown').innerHTML=calc.rows.map((row,i)=>{
+    row.card.querySelector('[data-role="participant-price"]').textContent=money(row.price);
+    const name=row.card.querySelector('input[name$="[name]"]').value.trim()||`Участник ${i+1}`;
+    return `<div><span>${name}<small style="display:block;color:var(--muted)">${FAMILY_TIERS[row.tier].label}</small></span><strong>${money(row.price)}</strong></div>`;
+  }).join('');
+  document.getElementById('sumNote').textContent=(priceIncreaseApplied?'После 25 июля все тарифы увеличены на 300 ₽. ':'До 25 июля действует текущая цена. ')+ 'Льготный тариф выбирается отдельно для каждого участника.';
+  document.getElementById('transferBlock').style.display=pay.value==='Перевод'?'block':'none';
+}
+document.querySelectorAll('input[name="plan"],input[name="pay"]').forEach(i=>i.addEventListener('change',updateSummary));
+updateSummary();
+
+function updateCountdown(kind,targetIso){
+  const box=document.querySelector(`[data-countdown="${kind}"]`);
+  const status=document.querySelector(`[data-status="${kind}"]`);
+  const diff=new Date(targetIso).getTime()-Date.now();
+  const left=Math.max(0,diff);
+  const totalHours=Math.floor(left/3600000);
+  const minutes=Math.floor((left%3600000)/60000);
+  const seconds=Math.floor((left%60000)/1000);
+  box.querySelector('[data-part="hours"]').textContent=String(totalHours).padStart(3,'0');
+  box.querySelector('[data-part="minutes"]').textContent=String(minutes).padStart(2,'0');
+  box.querySelector('[data-part="seconds"]').textContent=String(seconds).padStart(2,'0');
+  const ended=diff<=0;
+  status.classList.toggle('show',ended);
+  if(kind==='price'&&ended!==priceIncreaseApplied){
+    priceIncreaseApplied=ended;
+    refreshDisplayedPrices();
+    updateSummary();
+  }
+  if(kind==='registration'){
+    registrationClosed=ended;
+    submitButton.disabled=ended;
+    submitButton.textContent=ended?'Регистрация завершена':'Отправить регистрацию';
+    document.getElementById('addParticipant').disabled=ended;
+  }
+}
+function tickCountdowns(){
+  updateCountdown('price','2026-07-25T00:00:00+04:00');
+  updateCountdown('registration','2026-07-28T00:00:00+04:00');
+}
+tickCountdowns();setInterval(tickCountdowns,1000);
+
+const challengeResponse=document.getElementById('challengeResponse');
+function showChallengeResponse(text){challengeResponse.textContent=text;challengeResponse.classList.remove('show');void challengeResponse.offsetWidth;challengeResponse.classList.add('show')}
+document.getElementById('yesBtn').onclick=()=>showChallengeResponse('А ты молодец! 😉');
+document.getElementById('noBtn').onclick=()=>showChallengeResponse('Это печально, может, ты передумаешь? 🥲');
+
+const phone=document.getElementById('phone');
+phone.addEventListener('input',()=>{let d=phone.value.replace(/\D/g,'').slice(0,11);if(d.startsWith('8'))d='7'+d.slice(1);if(d&&!d.startsWith('7'))d='7'+d;const p=d.slice(1);let out=d?'+7':'';if(p.length)out+=' ('+p.slice(0,3);if(p.length>=3)out+=') '+p.slice(3,6);if(p.length>=6)out+='-'+p.slice(6,8);if(p.length>=8)out+='-'+p.slice(8,10);phone.value=out});
+function makeApplicationId(){const now=new Date();const pad=n=>String(n).padStart(2,'0');return `RZ-${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}-${Math.floor(1000+Math.random()*9000)}`}
+function fileToBase64(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(String(reader.result).split(',')[1]||'');reader.onerror=()=>reject(new Error('Не удалось прочитать изображение.'));reader.readAsDataURL(file)})}
+function collectParticipants(calc){return calc.rows.map((row,index)=>({
+  name:row.card.querySelector('input[name$="[name]"]').value.trim(),
+  age:Number(row.card.querySelector('input[name$="[age]"]').value),
+  tent:row.card.querySelector('input[name$="[tent]"]:checked').value,
+  sleepingBag:row.card.querySelector('input[name$="[bag]"]:checked').value,
+  familyTier:row.tier,
+  price:row.price
+}))}
+
+document.getElementById('form').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const form=e.currentTarget;
+  const st=document.getElementById('status');
+  const button=document.getElementById('submitButton');
+  st.className='status';
+  if(registrationClosed){st.textContent='Регистрация уже завершена.';st.className='status show err';return}
+  if(!form.checkValidity()){form.reportValidity();return}
+  const config=window.RASSKAZAN_CONFIG||{};
+  const endpoint=String(config.appsScriptUrl||'').trim();
+  if(!endpoint||endpoint.includes('PASTE_GOOGLE_APPS_SCRIPT')){st.textContent='Сначала вставьте URL Google Apps Script в файл config.js.';st.className='status show err';return}
+  const calc=calculateTotal();
+  const plan=document.querySelector('input[name="plan"]:checked');
+  const pay=document.querySelector('input[name="pay"]:checked');
+  const file=document.getElementById('paymentScreenshot').files[0];
+  if(pay.value==='Перевод'&&!file){st.textContent='При переводе прикрепите скриншот оплаты.';st.className='status show err';return}
+  if(file&&file.size>6*1024*1024){st.textContent='Скриншот слишком большой. Максимальный размер — 6 МБ.';st.className='status show err';return}
+  button.disabled=true;button.textContent='Отправляем…';
+  try{
+    const screenshot=file?{name:file.name,mimeType:file.type||'image/jpeg',base64:await fileToBase64(file)}:null;
+    const payload={applicationId:makeApplicationId(),phone:phone.value.trim(),city:form.elements.city.value.trim(),church:form.elements.church.value.trim(),plan:plan.dataset.label,paymentMethod:pay.value,participants:collectParticipants(calc),total:calc.total,comment:form.elements.comment.value.trim(),personalDataConsent:document.getElementById('personalDataConsent').checked,screenshot,sourceUrl:location.href};
+    await fetch(endpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
+    st.textContent=`Заявка ${payload.applicationId} отправлена в Google Таблицу. Общая сумма: ${money(calc.total)}.`;
+    st.className='status show ok';
+  }catch(err){st.textContent=err.message||'Не удалось отправить заявку. Проверьте интернет и настройки Google Apps Script.';st.className='status show err'}finally{button.disabled=registrationClosed;button.textContent=registrationClosed?'Регистрация завершена':'Отправить регистрацию'}
+});
+</script>
+</body></html>
