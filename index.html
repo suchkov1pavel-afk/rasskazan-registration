@@ -1,20 +1,20 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Рассказань — регистрация</title>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>⛺ Рассказань — регистрация</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230c1b17'/%3E%3Cpath d='M9 48 30 17c1-2 3-2 4 0l21 31H9Z' fill='%23f3c47d'/%3E%3Cpath d='M32 19v29M18 48l14-22 14 22' fill='none' stroke='%23fff4da' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M32 48V35l9 13' fill='%2310221d'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Prata&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0b1411;--card:rgba(15,28,24,.82);--line:rgba(255,255,255,.12);--text:#f5f2ea;--muted:#c6d0cb;--accent:#f3c47d;--accent2:#a9d5c0;--radius:26px;--shadow:0 22px 60px rgba(0,0,0,.35)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Manrope,system-ui,sans-serif;color:var(--text);background-color:#0b1411;background-image:linear-gradient(rgba(7,14,11,.58),rgba(7,14,11,.82)),url('assets/site-bg.webp');background-position:center top;background-size:cover;background-attachment:fixed;background-repeat:no-repeat}a{color:inherit}img{max-width:100%;display:block}.container{width:min(1160px,calc(100% - 28px));margin:0 auto}.serif{font-family:Prata,Georgia,serif;font-weight:400}.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:var(--accent2);font-weight:800}.muted{color:var(--muted)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;background:#0b1411;overflow-x:hidden;width:100%}body{margin:0;min-height:100%;width:100%;max-width:100%;position:relative;isolation:isolate;overflow-x:hidden;font-family:Manrope,system-ui,sans-serif;color:var(--text);background:transparent}body::before{content:'';position:fixed;inset:0;z-index:-2;background:#0b1411 url('assets/site-bg.webp') center top/cover no-repeat;transform:translateZ(0);backface-visibility:hidden;pointer-events:none}body::after{content:'';position:fixed;inset:0;z-index:-1;background:linear-gradient(rgba(7,14,11,.58),rgba(7,14,11,.82));pointer-events:none}a{color:inherit}img{max-width:100%;display:block}.container{width:min(1160px,calc(100% - 28px));margin:0 auto}.serif{font-family:Prata,Georgia,serif;font-weight:400}.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:var(--accent2);font-weight:800}.muted{color:var(--muted)}
 .nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:50;width:min(1120px,calc(100% - 20px));padding:10px 14px;border:1px solid var(--line);background:rgba(6,14,11,.62);backdrop-filter:blur(12px);border-radius:999px;display:flex;justify-content:space-between;align-items:center}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800}.mark{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#fff0c9);color:#12201c}.navlinks{display:flex;gap:18px;align-items:center;font-size:14px}.btn{border:0;border-radius:999px;padding:13px 18px;font:inherit;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn-primary{background:var(--accent);color:#13211d}.btn-ghost{background:rgba(255,255,255,.08);border:1px solid var(--line);color:var(--text)}
 .hero{min-height:100svh;display:grid;align-items:end;padding:132px 0 58px}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:26px}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}.pill{padding:9px 12px;border:1px solid var(--line);background:rgba(255,255,255,.06);border-radius:999px;font-size:13px}.hero h1{font-size:clamp(56px,10vw,132px);line-height:.92;margin:.1em 0 .18em;letter-spacing:-.05em}.hero h1 em{font-style:normal;color:var(--accent)}.hero p{max-width:760px;font-size:clamp(17px,2vw,21px);line-height:1.7;color:#ebefec}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.glass{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow);backdrop-filter:blur(10px)}.challenge{padding:24px;align-self:end}.challenge h3{font-size:28px;margin:.2em 0}.challenge p{color:var(--muted);line-height:1.65}.challenge .buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.challenge-response{display:none;margin-top:14px;padding:13px 15px;border-radius:15px;border:1px solid rgba(243,196,125,.34);background:rgba(243,196,125,.09);color:#fff1d5;font-weight:800;line-height:1.45;animation:responseIn .28s ease}.challenge-response.show{display:block}@keyframes responseIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
 section{padding:88px 0}.section-title{font-size:clamp(38px,5vw,72px);line-height:1.04;letter-spacing:-.035em;margin-bottom:16px}.section-lead{max-width:800px;font-size:18px;line-height:1.8;color:#dde3df}.story{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px}.copy p{font-size:17px;line-height:1.8;color:#d8dfdb}.quote{padding:18px 18px 18px 22px;border-left:3px solid var(--accent);background:linear-gradient(90deg,rgba(243,196,125,.11),transparent);border-radius:0 18px 18px 0;color:#f6eeda;font-size:21px}.themes-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-top:34px;margin-bottom:16px}.themes-head h3{margin:0;font-size:clamp(28px,3vw,42px);line-height:1.1}.themes-head p{margin:0;max-width:420px;color:var(--muted);font-size:14px;line-height:1.6}.topics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.topic{position:relative;min-height:172px;padding:22px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));overflow:hidden;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}.topic::before{content:'';position:absolute;inset:auto -30px -42px auto;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(243,196,125,.22),transparent 67%);pointer-events:none}.topic:hover{transform:translateY(-5px);border-color:rgba(243,196,125,.5);box-shadow:0 20px 46px rgba(0,0,0,.24)}.topic-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}.topic-num{font-size:12px;font-weight:800;letter-spacing:.15em;color:var(--accent)}.topic-icon{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(243,196,125,.12);border:1px solid rgba(243,196,125,.2);font-size:18px}.topic-kicker{display:block;margin-bottom:7px;color:var(--accent2);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.topic-title{display:block;font-size:clamp(18px,2vw,23px);line-height:1.25;font-weight:800;letter-spacing:-.02em}.topic-sub{display:block;margin-top:9px;color:var(--muted);font-size:12px}
 .gallery-label{margin-top:30px;margin-bottom:16px}.past-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}.gallery-column{display:grid;gap:14px;align-content:start}.photo{width:100%;overflow:hidden;border-radius:22px;border:1px solid var(--line);box-shadow:var(--shadow);background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025))}.photo img{width:100%;height:auto;object-fit:contain;background:#09100e;transition:transform .35s ease}.photo:hover img{transform:scale(1.012)}
 .band{padding:78px 0}.band-card{padding:40px;max-width:none;min-height:330px;display:grid;grid-template-columns:.85fr 1.15fr;gap:38px;align-items:center}.band-copy .section-lead{max-width:none}.activities{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.act{padding:11px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.05);font-size:14px}
 .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{padding:28px}.price{font-size:52px;font-weight:800;color:var(--accent);letter-spacing:-.04em}.family{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.family div{padding:14px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid var(--line)}.family span{display:block;color:var(--muted);font-size:13px;margin-bottom:5px}.map{margin-top:16px;border-radius:20px;overflow:hidden;border:1px solid var(--line);height:360px}.map iframe{width:100%;height:100%;border:0}
-.form-layout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:18px;align-items:start}.form-card{padding:28px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:8px;margin-bottom:14px}.field label,.label{font-size:13px;font-weight:800;color:#eef2f0}input,textarea,select{width:100%;padding:15px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(4,10,8,.5);color:var(--text);font:inherit}textarea{min-height:96px;resize:vertical}.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}.seg input,.plans input,.pay input{position:absolute;opacity:0}.seg label,.pay label{display:flex;align-items:center;justify-content:center;padding:13px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.04);cursor:pointer;font-weight:700}.seg input:checked+label,.pay input:checked+label{border-color:var(--accent);background:rgba(243,196,125,.12)}.plans{display:grid;grid-template-columns:1fr 1fr;gap:10px}.plans label{display:block;padding:16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.04);cursor:pointer}.plans label strong{display:block}.plans label span{display:block;color:var(--muted);font-size:13px;margin-top:4px}.plans label b{display:block;color:var(--accent);font-size:22px;margin-top:10px}.plans input:checked+label{border-color:var(--accent);background:linear-gradient(135deg,rgba(243,196,125,.18),rgba(169,213,192,.08))}.participants-head{display:flex;justify-content:space-between;gap:14px;align-items:center;margin:8px 0 14px}.participants-head h3{margin:0;font-size:26px}.add-participant{padding:11px 15px}.participant-card{position:relative;padding:20px;margin-bottom:14px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.025))}.participant-top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:14px}.participant-title{font-size:16px;font-weight:800}.remove-participant{display:none;border:1px solid var(--line);background:rgba(255,255,255,.05);color:#f8cfc7;border-radius:999px;padding:7px 11px;cursor:pointer;font:inherit;font-size:12px}.participant-card:not(:first-child) .remove-participant{display:inline-flex}.participant-price{margin-left:auto;padding:7px 11px;border-radius:999px;border:1px solid rgba(243,196,125,.35);background:rgba(243,196,125,.09);color:var(--accent);font-weight:800;font-size:13px;white-space:nowrap}.benefits-panel{margin:8px 0 16px;border:1px solid rgba(255,255,255,.11);border-radius:17px;background:rgba(255,255,255,.025);overflow:hidden}.benefits-panel summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;cursor:pointer;font-size:13px;font-weight:800;color:#e4ebe7}.benefits-panel summary::-webkit-details-marker{display:none}.benefits-panel summary::after{content:'+';font-size:20px;color:var(--muted);font-weight:500}.benefits-panel[open] summary::after{content:'−'}.benefits-panel summary small{color:var(--muted);font-size:11px;font-weight:600}.benefits-content{padding:0 14px 14px}.benefits-intro{margin:0 0 10px;color:var(--muted);font-size:12px;line-height:1.55}.benefit-rows{display:grid;gap:9px}.benefit-row{display:grid;grid-template-columns:minmax(130px,.8fr) 2.2fr;gap:10px;align-items:center;padding:11px;border-radius:14px;background:rgba(4,10,8,.28);border:1px solid rgba(255,255,255,.075)}.benefit-person{font-size:13px;font-weight:800}.benefit-person small{display:block;margin-top:3px;color:var(--muted);font-size:11px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.family-tier-buttons{display:grid;grid-template-columns:1fr 1fr;gap:7px}.tier-btn{min-height:40px;padding:8px 10px;border-radius:11px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.025);color:#dce4e0;font:inherit;font-size:11px;font-weight:700;line-height:1.3;cursor:pointer;transition:.2s}.tier-btn:hover{border-color:rgba(243,196,125,.34)}.tier-btn.active{border-color:rgba(243,196,125,.7);background:rgba(243,196,125,.1);color:#ffe1ae}.tier-hint{grid-column:2;margin-top:-2px;color:var(--muted);font-size:10px;line-height:1.4}.countdown-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0 30px}.countdown-card{padding:22px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));box-shadow:var(--shadow)}.countdown-card.price-clock{border-color:rgba(243,196,125,.32)}.countdown-card.close-clock{border-color:rgba(169,213,192,.28)}.countdown-title{font-size:17px;font-weight:800;margin:4px 0 16px}.countdown{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.count-unit{padding:12px 8px;border-radius:15px;background:rgba(4,10,8,.42);border:1px solid var(--line);text-align:center}.count-unit strong{display:block;font-size:clamp(24px,4vw,38px);line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}.count-unit span{display:block;margin-top:7px;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}.countdown-deadline{margin-top:12px;color:var(--muted);font-size:12px}.countdown-status{display:none;margin-top:12px;padding:10px 12px;border-radius:12px;background:rgba(243,196,125,.1);color:#ffe5bb;font-weight:800;font-size:13px}.countdown-status.show{display:block}.upload{padding:16px;border:1px dashed rgba(255,255,255,.28);border-radius:18px;background:rgba(255,255,255,.03)}.upload input{background:none;padding:0;border:0}.summary{position:sticky;top:88px;padding:24px}.sum-line{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}.sum-line span{color:var(--muted)}.breakdown{display:grid;gap:8px;margin:14px 0}.breakdown div{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:#d8e0dc}.total{display:flex;justify-content:space-between;align-items:end;margin-top:18px}.total strong{font-size:36px;color:var(--accent)}.note{font-size:12px;line-height:1.6;color:var(--muted);margin-top:16px}.status{display:none;margin-top:14px;padding:12px 14px;border-radius:14px}.status.show{display:block}.ok{background:#17352a;color:#ccffe4}.err{background:#3a201c;color:#ffd7cf}.hint{font-size:12px;color:var(--muted)}.consent-row{display:flex;gap:10px;align-items:flex-start;margin:16px 0 14px;padding:13px 14px;border-radius:14px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.1);color:#d8e1dc;font-size:12px;line-height:1.55}.consent-row input{width:18px;height:18px;min-width:18px;margin:1px 0 0;accent-color:#f3c47d}.consent-row strong{color:#fff1d2}
+.form-layout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:18px;align-items:start}.form-card{padding:28px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:8px;margin-bottom:14px}.field label,.label{font-size:13px;font-weight:800;color:#eef2f0}input,textarea,select{width:100%;padding:15px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(4,10,8,.5);color:var(--text);font:inherit}textarea{min-height:96px;resize:vertical}.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}.seg input,.plans input,.pay input{position:absolute;opacity:0}.seg label,.pay label{display:flex;align-items:center;justify-content:center;padding:13px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.04);cursor:pointer;font-weight:700}.seg input:checked+label,.pay input:checked+label{border-color:var(--accent);background:rgba(243,196,125,.12)}.plans{display:grid;grid-template-columns:1fr 1fr;gap:10px}.plans label{display:block;padding:16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.04);cursor:pointer}.plans label strong{display:block}.plans label span{display:block;color:var(--muted);font-size:13px;margin-top:4px}.plans label b{display:block;color:var(--accent);font-size:22px;margin-top:10px}.plans input:checked+label{border-color:var(--accent);background:linear-gradient(135deg,rgba(243,196,125,.18),rgba(169,213,192,.08))}.participants-head{display:flex;justify-content:space-between;gap:14px;align-items:center;margin:8px 0 14px}.participants-head h3{margin:0;font-size:26px}.add-participant{padding:11px 15px}.participant-card{position:relative;padding:20px;margin-bottom:14px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.025))}.participant-top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:14px}.participant-title{font-size:16px;font-weight:800}.remove-participant{display:none;border:1px solid var(--line);background:rgba(255,255,255,.05);color:#f8cfc7;border-radius:999px;padding:7px 11px;cursor:pointer;font:inherit;font-size:12px}.participant-card:not(:first-child) .remove-participant{display:inline-flex}.participant-price{margin-left:auto;padding:7px 11px;border-radius:999px;border:1px solid rgba(243,196,125,.35);background:rgba(243,196,125,.09);color:var(--accent);font-weight:800;font-size:13px;white-space:nowrap}.benefits-panel{margin:8px 0 16px;border:1px solid rgba(255,255,255,.11);border-radius:17px;background:rgba(255,255,255,.025);overflow:hidden}.benefits-panel summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;cursor:pointer;font-size:13px;font-weight:800;color:#e4ebe7}.benefits-panel summary::-webkit-details-marker{display:none}.benefits-panel summary::after{content:'+';font-size:20px;color:var(--muted);font-weight:500}.benefits-panel[open] summary::after{content:'−'}.benefits-panel summary small{color:var(--muted);font-size:11px;font-weight:600}.benefits-content{padding:0 14px 14px}.benefits-intro{margin:0 0 10px;color:var(--muted);font-size:12px;line-height:1.55}.benefit-rows{display:grid;gap:9px}.benefit-row{display:grid;grid-template-columns:minmax(130px,.8fr) 2.2fr;gap:10px;align-items:center;padding:11px;border-radius:14px;background:rgba(4,10,8,.28);border:1px solid rgba(255,255,255,.075)}.benefit-person{font-size:13px;font-weight:800}.benefit-person small{display:block;margin-top:3px;color:var(--muted);font-size:11px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.family-tier-buttons{display:grid;grid-template-columns:1fr 1fr;gap:7px}.tier-btn{min-height:40px;padding:8px 10px;border-radius:11px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.025);color:#dce4e0;font:inherit;font-size:11px;font-weight:700;line-height:1.3;cursor:pointer;transition:.2s}.tier-btn:hover{border-color:rgba(243,196,125,.34)}.tier-btn.active{border-color:rgba(243,196,125,.7);background:rgba(243,196,125,.1);color:#ffe1ae}.tier-hint{grid-column:2;margin-top:-2px;color:var(--muted);font-size:10px;line-height:1.4}.countdown-grid{display:grid;grid-template-columns:1fr;gap:14px;margin:24px 0 30px}.countdown-card{padding:22px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));box-shadow:var(--shadow)}.countdown-card.price-clock{border-color:rgba(243,196,125,.32)}.countdown-card.close-clock{border-color:rgba(169,213,192,.28)}.countdown-title{font-size:17px;font-weight:800;margin:4px 0 16px}.countdown{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.count-unit{padding:12px 8px;border-radius:15px;background:rgba(4,10,8,.42);border:1px solid var(--line);text-align:center}.count-unit strong{display:block;font-size:clamp(24px,4vw,38px);line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}.count-unit span{display:block;margin-top:7px;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}.countdown-deadline{margin-top:12px;color:var(--muted);font-size:12px}.countdown-status{display:none;margin-top:12px;padding:10px 12px;border-radius:12px;background:rgba(243,196,125,.1);color:#ffe5bb;font-weight:800;font-size:13px}.countdown-status.show{display:block}.upload{padding:16px;border:1px dashed rgba(255,255,255,.28);border-radius:18px;background:rgba(255,255,255,.03)}.upload input{background:none;padding:0;border:0}.summary{position:sticky;top:88px;padding:24px}.sum-line{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}.sum-line span{color:var(--muted)}.breakdown{display:grid;gap:8px;margin:14px 0}.breakdown div{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:#d8e0dc}.total{display:flex;justify-content:space-between;align-items:end;margin-top:18px}.total strong{font-size:36px;color:var(--accent)}.note{font-size:12px;line-height:1.6;color:var(--muted);margin-top:16px}.status{display:none;margin-top:14px;padding:12px 14px;border-radius:14px}.status.show{display:block}.status.err{background:#3a201c;color:#ffd7cf;border:1px solid rgba(255,160,140,.28)}.hint{font-size:12px;color:var(--muted)}.field-error{border-color:#e88d78!important;box-shadow:0 0 0 3px rgba(232,141,120,.12)!important}.success-modal{position:fixed;inset:0;z-index:1000;display:none;place-items:center;padding:20px;background:rgba(2,8,6,.78);backdrop-filter:blur(12px)}.success-modal.show{display:grid}.success-card{width:min(470px,100%);padding:34px 28px;border:1px solid rgba(243,196,125,.35);border-radius:28px;background:linear-gradient(145deg,#13251f,#0b1713);box-shadow:0 30px 100px rgba(0,0,0,.55);text-align:center;animation:successIn .32s ease}.success-icon{width:78px;height:78px;margin:0 auto 20px;border-radius:24px;display:grid;place-items:center;background:linear-gradient(135deg,#f3c47d,#ffe3ad);color:#10211c;font-size:38px;box-shadow:0 16px 40px rgba(243,196,125,.22)}.success-card h3{margin:0 0 12px;font-size:clamp(30px,6vw,42px);line-height:1.05}.success-card p{margin:0 auto 22px;max-width:360px;color:#d8e2dd;font-size:17px;line-height:1.65}.success-card .btn{min-width:180px}@keyframes successIn{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}.consent-row{display:flex;gap:10px;align-items:flex-start;margin:16px 0 14px;padding:13px 14px;border-radius:14px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.1);color:#d8e1dc;font-size:12px;line-height:1.55}.consent-row input{width:18px;height:18px;min-width:18px;margin:1px 0 0;accent-color:#f3c47d}.consent-row strong{color:#fff1d2}
 footer{padding:36px 0 56px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}.footer-title{font-size:22px;color:var(--text)}
 @media(max-width:900px){.hero-grid,.story,.info-grid,.form-layout,.band-card{grid-template-columns:1fr}.themes-head{align-items:flex-start;flex-direction:column}.topics{grid-template-columns:1fr 1fr}.past-gallery{grid-template-columns:1fr 1fr}.gallery-column:last-child{grid-column:span 2;grid-template-columns:1fr 1fr}.family{grid-template-columns:1fr}.summary{position:static}}
-@media(max-width:640px){body{background-attachment:scroll;background-position:center top}.navlinks a:not(.cta){display:none}.hero{padding-top:110px}.hero h1{font-size:58px}.topics,.form-grid,.plans,.past-gallery,.gallery-column:last-child{grid-template-columns:1fr}.gallery-column:last-child{grid-column:auto}.topic{min-height:150px}.challenge .buttons,.seg,.family-tier-buttons,.countdown-grid{grid-template-columns:1fr}.benefit-row{grid-template-columns:1fr}.tier-hint{grid-column:1}.countdown{grid-template-columns:repeat(3,1fr)}.participants-head{align-items:flex-start;flex-direction:column}.band-card{padding:26px;min-height:auto}.container{width:min(100% - 22px,1160px)}}
+@media(max-width:640px){.navlinks a:not(.cta){display:none}.hero{padding-top:110px}.hero h1{font-size:58px}.topics,.form-grid,.plans,.past-gallery,.gallery-column:last-child{grid-template-columns:1fr}.gallery-column:last-child{grid-column:auto}.topic{min-height:150px}.challenge .buttons,.seg,.family-tier-buttons,.countdown-grid{grid-template-columns:1fr}.benefit-row{grid-template-columns:1fr}.tier-hint{grid-column:1}.countdown{grid-template-columns:repeat(3,1fr)}.participants-head{align-items:flex-start;flex-direction:column}.band-card{padding:26px;min-height:auto}.container{width:min(100% - 22px,1160px)}}
 
 /* Исправленная компоновка блока тем */
 #about .about-overview{display:grid;grid-template-columns:minmax(300px,.88fr) minmax(0,1.12fr);gap:clamp(32px,5vw,72px);align-items:start;margin-bottom:64px}
@@ -64,7 +64,7 @@ button,input,textarea,select{touch-action:manipulation}
 
 @media (max-width:820px){
   :root{--radius:22px;--shadow:0 18px 45px rgba(0,0,0,.30)}
-  body{background-attachment:scroll;background-position:center top}
+  
   section{padding:66px 0}
   .container{width:min(100% - 28px,720px)}
   .nav{top:8px;padding:8px 9px 8px 13px;border-radius:22px}
@@ -88,7 +88,7 @@ button,input,textarea,select{touch-action:manipulation}
   .band-card{grid-template-columns:1fr;min-height:auto;padding:29px;gap:18px}.band{padding:55px 0}.activities{margin-top:16px}
   .info-grid{grid-template-columns:1fr}.card{padding:24px}.map{height:320px}
   .countdown-grid{grid-template-columns:1fr;gap:12px;margin:18px 0 24px}.countdown-card{padding:18px}.countdown-title{margin-bottom:13px}
-  .form-layout{grid-template-columns:1fr}.summary{position:static;order:-1;padding:21px}.form-card{padding:22px}
+  .form-layout{grid-template-columns:1fr}.summary{position:static;order:0;padding:21px}.form-card{padding:22px}
   .form-grid{grid-template-columns:1fr 1fr}.participants-head{align-items:center}.participant-card{padding:17px}
   .benefit-row{grid-template-columns:1fr}.tier-hint{grid-column:1}.family-tier-buttons{grid-template-columns:1fr 1fr}
   footer{padding:31px 0 46px}
@@ -122,7 +122,7 @@ button,input,textarea,select{touch-action:manipulation}
   .plans{grid-template-columns:1fr 1fr;gap:8px}.plans label{padding:13px 11px;border-radius:14px;min-height:126px}.plans label strong{font-size:14px}.plans label span{font-size:11px;line-height:1.35}.plans label b{font-size:19px;margin-top:8px}
   .benefits-panel{margin-top:5px}.benefits-panel summary{padding:13px;font-size:12px;align-items:flex-start}.benefits-panel summary small{font-size:10px}.benefits-content{padding:0 10px 10px}.family-tier-buttons{grid-template-columns:1fr}.tier-btn{font-size:11px;padding:9px}.benefit-person small{white-space:normal}
   .upload{padding:13px}.upload strong{font-size:13px;line-height:1.5}.upload input{font-size:13px}
-  .consent-row{padding:12px;font-size:11px}.summary{padding:18px;border-radius:20px}.summary h3{font-size:24px!important}.sum-line{font-size:13px}.total strong{font-size:31px}.breakdown div{font-size:12px}
+  .consent-row{padding:12px;font-size:11px}.success-card{padding:28px 20px;border-radius:23px}.success-card p{font-size:15px}.summary{padding:18px;border-radius:20px}.summary h3{font-size:24px!important}.sum-line{font-size:13px}.total strong{font-size:31px}.breakdown div{font-size:12px}
   footer .container{display:grid!important;gap:14px!important;align-items:start!important}
 }
 
@@ -138,6 +138,172 @@ button,input,textarea,select{touch-action:manipulation}
 
 @media (min-width:821px){
   .topic-strip,.photo,.card,.challenge,.band-card,.form-card,.summary,.countdown-card{will-change:transform}
+}
+
+
+@media (max-width:820px){
+  body::before{
+    background-position:center top;
+    background-size:cover;
+  }
+}
+
+
+main,header,footer,section,.container,.nav{max-width:100%}
+img,iframe,input,textarea,select,button{max-width:100%}
+.memories-heading{display:flex;align-items:end;justify-content:space-between;gap:18px}
+.gallery-hint{display:none;color:var(--muted);font-size:13px}
+.gallery-shell{position:relative}
+.gallery-arrow{display:none;position:absolute;top:50%;z-index:6;width:44px;height:44px;padding:0;border:1px solid rgba(255,255,255,.22);border-radius:50%;background:rgba(9,18,15,.86);color:#fff;font:700 32px/1 Manrope,sans-serif;box-shadow:0 8px 28px rgba(0,0,0,.35);backdrop-filter:blur(10px);cursor:pointer}
+.gallery-arrow-left{left:5px;transform:translateY(-50%)}
+.gallery-arrow-right{right:5px;transform:translateY(-50%)}
+
+
+@media (max-width:820px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden;overscroll-behavior-x:none}
+  body::before{width:100vw;max-width:100vw}
+  .container{width:calc(100% - 24px);max-width:calc(100% - 24px)}
+  .nav{width:calc(100% - 16px);max-width:calc(100% - 16px)}
+  .memories-heading{align-items:center;margin-bottom:12px}
+  .gallery-label{margin:0}
+  .gallery-hint{display:block;text-align:right}
+  .gallery-shell{margin-inline:-2px}
+  .past-gallery{
+    display:flex!important;
+    grid-template-columns:none!important;
+    gap:12px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    overscroll-behavior-inline:contain;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    padding:4px 44px 10px;
+    touch-action:pan-x pan-y;
+  }
+  .past-gallery::-webkit-scrollbar{display:none}
+  .gallery-column{display:contents!important}
+  .past-gallery .photo{
+    flex:0 0 min(82vw,340px);
+    width:min(82vw,340px);
+    scroll-snap-align:center;
+    scroll-snap-stop:always;
+    margin:0;
+  }
+  .past-gallery .photo img{width:100%;height:auto}
+  .gallery-arrow{display:grid;place-items:center}
+}
+@media (max-width:420px){
+  .gallery-hint{font-size:11px;max-width:110px}
+  .gallery-arrow{width:40px;height:40px;font-size:29px}
+  .past-gallery{padding-inline:38px}
+  .past-gallery .photo{flex-basis:78vw;width:78vw}
+}
+
+
+.full-registration-card{
+  padding:22px;
+  margin-bottom:18px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:24px;
+  background:linear-gradient(145deg,rgba(21,38,33,.88),rgba(12,25,21,.82));
+  box-shadow:0 16px 40px rgba(0,0,0,.2);
+}
+.full-registration-card .participant-top{margin-bottom:18px}
+.participant-section-label{
+  margin:18px 0 10px;
+  color:var(--accent2);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.participant-plans{margin-bottom:4px}
+.participant-benefit{
+  margin-top:18px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:17px;
+  background:rgba(255,255,255,.025);
+  overflow:hidden;
+}
+.participant-benefit summary{
+  padding:13px 15px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  cursor:pointer;
+  font-weight:800;
+  list-style:none;
+}
+.participant-benefit summary::-webkit-details-marker{display:none}
+.participant-benefit summary small{color:var(--muted);font-size:11px;font-weight:500}
+.participant-benefit-content{padding:0 15px 15px}
+.participant-benefit .family-tier-buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.participant-benefit .tier-btn{
+  min-height:48px;
+  padding:10px 12px;
+  border:1px solid var(--line);
+  border-radius:13px;
+  background:rgba(255,255,255,.035);
+  color:var(--text);
+  font:inherit;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+}
+.participant-benefit .tier-btn.active{
+  border-color:var(--accent);
+  background:rgba(243,196,125,.13);
+  color:#ffe0ad;
+}
+.participant-benefit .tier-current{
+  margin-top:9px;
+  color:var(--muted);
+  font-size:12px;
+}
+.payment-section{
+  margin-top:24px;
+  padding:22px;
+  border:1px solid rgba(243,196,125,.22);
+  border-radius:22px;
+  background:rgba(243,196,125,.035);
+}
+.payment-heading{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:15px;
+}
+.payment-heading h3{margin:4px 0 0;font-size:24px}
+.payment-heading .hint{max-width:300px;text-align:right}
+.bank-upload{display:grid;gap:15px}
+.bank-details{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:11px 12px;
+  border-radius:15px;
+  background:rgba(255,255,255,.045);
+}
+.alfa-logo{width:46px;height:46px;flex:0 0 46px;display:block}
+.alfa-logo svg{width:100%;height:100%;display:block}
+.bank-details strong{display:block;font-size:16px}
+.bank-details small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+@media(max-width:700px){
+  .full-registration-card{padding:16px;border-radius:20px}
+  .participant-benefit .family-tier-buttons{grid-template-columns:1fr}
+  .payment-section{padding:16px}
+  .payment-heading{display:block}
+  .payment-heading .hint{text-align:left;margin-top:6px}
+  .participant-plans{grid-template-columns:1fr 1fr}
+}
+@media(max-width:430px){
+  .participant-plans{grid-template-columns:1fr}
+  .bank-details{align-items:flex-start}
+  .bank-details small{line-height:1.45}
 }
 
 </style></head><body>
@@ -181,129 +347,343 @@ button,input,textarea,select{touch-action:manipulation}
     </div>
   </div>
 </section>
-<section id="memories"><div class="container"><div class="eyebrow gallery-label">Как это было в прошлом году</div><div class="past-gallery"><div class="gallery-column"><figure class="photo"><img src="assets/past-1.webp" alt="Небо над базой" loading="lazy"></figure><figure class="photo"><img src="assets/past-2.webp" alt="Большой костёр" loading="lazy"></figure><figure class="photo"><img src="assets/past-3.webp" alt="Волейбол на базе" loading="lazy"></figure><figure class="photo"><img src="assets/past-11.webp" alt="Поляна на базе перед дождём" loading="lazy"></figure></div><div class="gallery-column"><figure class="photo"><img src="assets/past-4.webp" alt="Пение на выезде" loading="lazy"></figure><figure class="photo"><img src="assets/past-5.webp" alt="Проповедь" loading="lazy"></figure><figure class="photo"><img src="assets/past-6.webp" alt="Ночной волейбол" loading="lazy"></figure><figure class="photo"><img src="assets/past-7.webp" alt="Вечер на базе" loading="lazy"></figure></div><div class="gallery-column"><figure class="photo"><img src="assets/past-8.webp" alt="Пение у костра" loading="lazy"></figure><figure class="photo"><img src="assets/past-9.webp" alt="Общение на сцене" loading="lazy"></figure><figure class="photo"><img src="assets/past-10.webp" alt="Палатки на закате" loading="lazy"></figure></div></div></div></section>
+<section id="memories"><div class="container">
+<div class="memories-heading">
+  <div class="eyebrow gallery-label">Как это было в прошлом году</div>
+  <div class="gallery-hint">Листайте фотографии <span aria-hidden="true">↔</span></div>
+</div>
+<div class="gallery-shell">
+  <button class="gallery-arrow gallery-arrow-left" type="button" aria-label="Предыдущие фотографии">‹</button>
+  <div class="past-gallery" id="pastGallery"><div class="gallery-column"><figure class="photo"><img src="assets/past-1.webp" alt="Небо над базой" loading="lazy"></figure><figure class="photo"><img src="assets/past-2.webp" alt="Большой костёр" loading="lazy"></figure><figure class="photo"><img src="assets/past-3.webp" alt="Волейбол на базе" loading="lazy"></figure><figure class="photo"><img src="assets/past-11.webp" alt="Поляна на базе перед дождём" loading="lazy"></figure></div><div class="gallery-column"><figure class="photo"><img src="assets/past-4.webp" alt="Пение на выезде" loading="lazy"></figure><figure class="photo"><img src="assets/past-5.webp" alt="Проповедь" loading="lazy"></figure><figure class="photo"><img src="assets/past-6.webp" alt="Ночной волейбол" loading="lazy"></figure><figure class="photo"><img src="assets/past-7.webp" alt="Вечер на базе" loading="lazy"></figure></div><div class="gallery-column"><figure class="photo"><img src="assets/past-8.webp" alt="Пение у костра" loading="lazy"></figure><figure class="photo"><img src="assets/past-9.webp" alt="Общение на сцене" loading="lazy"></figure><figure class="photo"><img src="assets/past-10.webp" alt="Палатки на закате" loading="lazy"></figure></div></div>
+  <button class="gallery-arrow gallery-arrow-right" type="button" aria-label="Следующие фотографии">›</button>
+</div>
+</div></section>
 <section class="band"><div class="container"><div class="glass band-card"><div><div class="eyebrow">Нас ждут</div><h2 class="section-title serif" style="font-size:clamp(46px,5vw,68px);margin-top:12px">Несколько прекрасных дней</h2></div><div class="band-copy"><p class="section-lead">Проповеди и совместное изучение Библии, пение и молитва, искреннее общение, игры, речка и отдых на природе, волейбол и другие активности, вечерние костры.</p><div class="activities"><span class="act">📖 Проповеди</span><span class="act">🎶 Пение</span><span class="act">🙏 Молитва</span><span class="act">🎲 Игры</span><span class="act">🏐 Волейбол</span><span class="act">🌿 Речка и природа</span><span class="act">🔥 Вечерние костры</span></div></div></div></div></section>
 <section><div class="container info-grid"><article class="glass card"><div class="eyebrow">Пожертвование</div><h3 class="serif" style="font-size:34px;margin:.3em 0">Краткая информация</h3><p class="muted">Добровольное пожертвование за участие:</p><div class="price" data-base-price="2500">2 500 ₽</div><p>Оплата переводом: <strong data-base-price="2500">2 500 ₽</strong><br>Оплата наличными на месте: <strong data-base-price="2500">2 500 ₽</strong></p><div class="family"><div><span>Первый</span><strong data-base-price="2500">2 500 ₽</strong></div><div><span>Второй</span><strong data-base-price="2000">2 000 ₽</strong></div><div><span>Третий и далее</span><strong data-base-price="1500">1 500 ₽</strong></div></div></article><article class="glass card"><div class="eyebrow">Где это</div><h3 class="serif" style="font-size:34px;margin:.3em 0">Село Рассказань</h3><div class="map"><iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=42.610%2C51.535%2C42.705%2C51.595&layer=mapnik&marker=51.566549%2C42.655324"></iframe></div></article></div></section>
-<section id="register"><div class="container"><div class="eyebrow">Регистрация</div><h2 class="section-title serif">Присоединяйся</h2><p class="section-lead">Можно зарегистрировать себя, друзей или нескольких членов семьи одной заявкой.</p><div class="countdown-grid"><article class="countdown-card price-clock"><div class="eyebrow">Успей по действующей цене</div><div class="countdown-title">До повышения цены</div><div class="countdown" data-countdown="price"><div class="count-unit"><strong data-part="hours">000</strong><span>часов</span></div><div class="count-unit"><strong data-part="minutes">00</strong><span>минут</span></div><div class="count-unit"><strong data-part="seconds">00</strong><span>секунд</span></div></div><div class="countdown-deadline">До 25 июля 2026 года, 00:00 по Саратовскому времени</div><div class="countdown-status" data-status="price">Все тарифы повышены на 300 ₽.</div></article><article class="countdown-card close-clock"><div class="eyebrow">Последний срок</div><div class="countdown-title">До конца регистрации</div><div class="countdown" data-countdown="registration"><div class="count-unit"><strong data-part="hours">000</strong><span>часов</span></div><div class="count-unit"><strong data-part="minutes">00</strong><span>минут</span></div><div class="count-unit"><strong data-part="seconds">00</strong><span>секунд</span></div></div><div class="countdown-deadline">До 28 июля 2026 года, 00:00 по Саратовскому времени</div><div class="countdown-status" data-status="registration">Регистрация завершена.</div></article></div><div class="form-layout"><form class="glass form-card" id="form" enctype="multipart/form-data"><div class="participants-head"><div><h3>Участники</h3><div class="hint">Добавьте всех участников, которых хотите зарегистрировать одной заявкой.</div></div><button class="btn btn-ghost add-participant" id="addParticipant" type="button">+ Добавить участника</button></div><div id="participants"></div><div class="form-grid"><div class="field"><label>Контактный номер телефона</label><input id="phone" name="phone" type="tel" required placeholder="+7 (___) ___-__-__"></div><div class="field"><label>Город</label><input name="city" value="Саратов" required></div></div><div class="field"><label>Церковь</label><input name="church" value="Вокзальная" required><div class="hint">Можно указать свою церковь.</div></div><div class="field"><div class="label">Даты участия</div><div class="plans"><div><input checked id="p1" type="radio" name="plan" value="29 июля — 2 августа" data-label="29 июля — 2 августа" data-price="2500"><label for="p1"><strong>Все дни</strong><span>29 июля — 2 августа</span><b>2 500 ₽</b></label></div><div><input id="p2" type="radio" name="plan" value="30 июля — 2 августа" data-label="30 июля — 2 августа" data-price="1900"><label for="p2"><strong>4 дня</strong><span>30 июля — 2 августа</span><b>1 900 ₽</b></label></div><div><input id="p3" type="radio" name="plan" value="31 июля — 2 августа" data-label="31 июля — 2 августа" data-price="1300"><label for="p3"><strong>3 дня</strong><span>31 июля — 2 августа</span><b>1 300 ₽</b></label></div><div><input id="p4" type="radio" name="plan" value="1–2 августа" data-label="1–2 августа" data-price="900"><label for="p4"><strong>2 дня</strong><span>1–2 августа</span><b>900 ₽</b></label></div></div></div><details class="benefits-panel" id="benefitsPanel"><summary><span>Льгота многодетной семьи</span><small>необязательно</small></summary><div class="benefits-content"><p class="benefits-intro">Откройте этот раздел только для тех участников, которым нужна льготная стоимость.</p><div class="benefit-rows" id="benefitRows"></div></div></details><div class="field"><div class="label">Способ оплаты</div><div class="seg pay"><div><input checked id="pay1" type="radio" name="pay" value="Перевод"><label id="payTransferLabel" for="pay1">Перевод</label></div><div><input id="pay2" type="radio" name="pay" value="Наличными"><label id="payCashLabel" for="pay2">Наличными</label></div></div></div><div class="field" id="transferBlock"><label>Подтверждение перевода</label><div class="upload"><div style="margin-bottom:8px"><strong>Перевод по номеру: 8 964 998 66 42 · Альфа-Банк · Павел Михайлович С.</strong></div><input id="paymentScreenshot" name="payment_screenshot" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif"></div><div class="hint" style="margin-top:8px">После перевода прикрепи скриншот.</div></div><div class="field"><label>Комментарий</label><textarea name="comment" placeholder="Можно указать важные детали"></textarea></div><label class="consent-row"><input id="personalDataConsent" name="personalDataConsent" type="checkbox" required><span>Я даю согласие на <strong>сбор и обработку персональных данных</strong>, указанных в форме, для организации выезда и связи со мной.</span></label><button class="btn btn-primary" id="submitButton" style="width:100%" type="submit">Отправить регистрацию</button><div class="status" id="status"></div></form><aside class="glass summary"><div class="eyebrow">Итог</div><h3 style="font-size:28px;margin:.4em 0 0">Общая регистрация</h3><div class="sum-line"><span>Участников</span><strong id="sumCount">1</strong></div><div class="sum-line"><span>Даты</span><strong id="sumDates">29 июля — 2 августа</strong></div><div class="sum-line"><span>Способ</span><strong id="sumPay">Перевод</strong></div><div class="breakdown" id="breakdown"></div><div class="total"><span>К оплате</span><strong id="sumTotal">2 500 ₽</strong></div><p class="note" id="sumNote">Для каждого участника можно выбрать обычный или льготный тариф.</p></aside></div></div></section>
+<section id="register"><div class="container">
+<div class="eyebrow">Регистрация</div>
+<h2 class="section-title serif">Присоединяйся</h2>
+<p class="section-lead">Каждый добавленный участник получает отдельную полную форму: свой номер телефона, город, церковь, даты и остальные данные.</p>
+
+<div class="countdown-grid">
+  <article class="countdown-card close-clock">
+    <div class="eyebrow">До нашей встречи</div>
+    <div class="countdown-title">До начала Рассказани</div>
+    <div class="countdown" data-countdown="start">
+      <div class="count-unit"><strong data-part="hours">000</strong><span>часов</span></div>
+      <div class="count-unit"><strong data-part="minutes">00</strong><span>минут</span></div>
+      <div class="count-unit"><strong data-part="seconds">00</strong><span>секунд</span></div>
+    </div>
+    <div class="countdown-deadline">Начало 29 июля 2026 года в 08:00 по Саратовскому времени</div>
+    <div class="countdown-status" data-status="start">Рассказань уже началась!</div>
+  </article>
+</div>
+
+<div class="form-layout">
+  <form class="glass form-card" id="form" enctype="multipart/form-data">
+    <div class="participants-head">
+      <div>
+        <h3>Участники</h3>
+        <div class="hint">Для каждого человека заполняется отдельная регистрационная карточка.</div>
+      </div>
+      <button class="btn btn-ghost add-participant" id="addParticipant" type="button">+ Добавить участника</button>
+    </div>
+
+    <div id="participants"></div>
+
+    <section class="payment-section" aria-labelledby="paymentTitle">
+      <div class="payment-heading">
+        <div>
+          <div class="eyebrow">Общая оплата</div>
+          <h3 id="paymentTitle">Способ оплаты</h3>
+        </div>
+        <div class="hint">Один способ оплаты для всех участников в этой заявке.</div>
+      </div>
+
+      <div class="field">
+        <div class="seg pay">
+          <div>
+            <input checked id="pay1" type="radio" name="pay" value="Перевод">
+            <label id="payTransferLabel" for="pay1">Перевод</label>
+          </div>
+          <div>
+            <input id="pay2" type="radio" name="pay" value="Наличными">
+            <label id="payCashLabel" for="pay2">Наличными</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="field" id="transferBlock">
+        <label>Подтверждение перевода</label>
+        <div class="upload bank-upload">
+          <div class="bank-details">
+            <span class="alfa-logo" aria-label="Альфа-Банк">
+              <svg viewBox="0 0 48 48" role="img" aria-hidden="true">
+                <rect width="48" height="48" rx="12" fill="#EF3124"/>
+                <path d="M14 34 22.1 12h5.3L35 34h-5.2l-1.6-5H20.8l-1.7 5H14Zm8.1-9.4h4.8L24.5 17l-2.4 7.6Z" fill="#fff"/>
+              </svg>
+            </span>
+            <span>
+              <strong>Альфа-Банк</strong>
+              <small>8 964 998 66 42 · Павел Михайлович С.</small>
+            </span>
+          </div>
+          <input id="paymentScreenshot" name="payment_screenshot" type="file" required accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+        </div>
+        <div class="hint" style="margin-top:8px">После перевода прикрепи скриншот.</div>
+      </div>
+
+      <label class="consent-row">
+        <input id="personalDataConsent" name="personalDataConsent" type="checkbox" required>
+        <span>Я даю согласие на <strong>сбор и обработку персональных данных</strong>, указанных в форме, для организации выезда и связи со мной.</span>
+      </label>
+
+      <button class="btn btn-primary" id="submitButton" style="width:100%" type="submit">Отправить регистрацию</button>
+      <div class="status" id="status"></div>
+    </section>
+  </form>
+
+  <aside class="glass summary">
+    <div class="eyebrow">Итог</div>
+    <h3 style="font-size:28px;margin:.4em 0 0">Общая регистрация</h3>
+    <div class="sum-line"><span>Участников</span><strong id="sumCount">1</strong></div>
+    <div class="sum-line"><span>Даты</span><strong id="sumDates">29 июля — 2 августа</strong></div>
+    <div class="sum-line"><span>Способ</span><strong id="sumPay">Перевод</strong></div>
+    <div class="breakdown" id="breakdown"></div>
+    <div class="total"><span>К оплате</span><strong id="sumTotal">2 500 ₽</strong></div>
+    <p class="note" id="sumNote">У каждого участника могут быть свои контакты, даты и льгота.</p>
+  </aside>
+</div>
+</div></section>
 </main><footer><div class="container" style="display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap"><div><div class="footer-title serif">Мудрость гласит…</div><div>Рассказань · 29 июля — 2 августа</div></div><div>Рассказань ждёт. А мудрость уже говорит — осталось услышать.</div></div></footer>
+<div class="success-modal" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle"><div class="success-card"><div class="success-icon">⛺</div><h3 class="serif" id="successTitle">Спасибо!</h3><p>Ваша заявка принята.<br><strong>Ждём вас в Рассказани!</strong></p><button class="btn btn-primary" id="closeSuccessModal" type="button">Отлично</button></div></div>
 <script src="config.js"></script>
 <script>
 const money=n=>new Intl.NumberFormat('ru-RU').format(n)+' ₽';
 const participantsEl=document.getElementById('participants');
 const submitButton=document.getElementById('submitButton');
 let participantCounter=0;
-let registrationClosed=false;
-const PRICE_INCREASE_AT_MS=new Date('2026-07-25T00:00:00+04:00').getTime();
-const PRICE_INCREASE_AMOUNT=300;
-let priceIncreaseApplied=Date.now()>=PRICE_INCREASE_AT_MS;
+const successModal=document.getElementById('successModal');
+const closeSuccessModal=document.getElementById('closeSuccessModal');
+
+function openSuccessModal(){
+  successModal.classList.add('show');
+  document.body.style.overflow='hidden';
+  closeSuccessModal.focus();
+}
+function closeSuccess(){
+  successModal.classList.remove('show');
+  document.body.style.overflow='';
+}
+closeSuccessModal.addEventListener('click',closeSuccess);
+successModal.addEventListener('click',event=>{if(event.target===successModal)closeSuccess()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&successModal.classList.contains('show'))closeSuccess()});
+
+function clearInvalidStyles(form){
+  form.querySelectorAll('.field-error').forEach(el=>el.classList.remove('field-error'));
+}
+function markInvalidField(field){
+  field.classList.add('field-error');
+  field.scrollIntoView({behavior:'smooth',block:'center'});
+  field.focus({preventScroll:true});
+}
+function escapeHtml(value){
+  return String(value).replace(/[&<>'"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+}
 
 const FAMILY_TIERS={
-  standard:{label:'Обычный тариф',baseCap:Infinity},
-  second:{label:'Второй член многодетной семьи',baseCap:2000},
-  thirdPlus:{label:'Третий или последующий член многодетной семьи',baseCap:1500}
+  standard:{label:'Без льготы',baseCap:Infinity},
+  second:{label:'Второй член семьи',baseCap:2000},
+  thirdPlus:{label:'Третий или последующий член семьи',baseCap:1500}
 };
 
-function currentIncrease(){return Date.now()>=PRICE_INCREASE_AT_MS?PRICE_INCREASE_AMOUNT:0}
 function currentTierCap(tier){
-  const cap=FAMILY_TIERS[tier]?.baseCap??Infinity;
-  return Number.isFinite(cap)?cap+currentIncrease():Infinity;
+  return FAMILY_TIERS[tier]?.baseCap??Infinity;
 }
-function currentPlanPrice(plan){return Number(plan?.dataset.price||2500)+currentIncrease()}
-function refreshDisplayedPrices(){
-  document.querySelectorAll('input[name="plan"]').forEach(input=>{
-    const price=currentPlanPrice(input);
-    const priceTag=input.parentElement?.querySelector('b');
-    if(priceTag)priceTag.textContent=money(price);
-  });
-  document.querySelectorAll('[data-base-price]').forEach(element=>{
-    element.textContent=money(Number(element.dataset.basePrice)+currentIncrease());
-  });
+function currentPlanPrice(plan){
+  return Number(plan?.dataset.price||2500);
 }
-
-function participantTemplate(index){return `<div class="participant-card" data-participant="${index}"><input type="hidden" data-role="family-tier" value="standard"><div class="participant-top"><div class="participant-title">Участник ${index}</div><div class="participant-price" data-role="participant-price">2 500 ₽</div><button class="remove-participant" type="button">Удалить</button></div><div class="form-grid"><div class="field"><label>ФИО</label><input name="participants[${index}][name]" required placeholder="Иван Иванов"></div><div class="field"><label>Количество лет</label><input name="participants[${index}][age]" type="number" min="13" max="99" required placeholder="18"></div></div><div class="form-grid"><div class="field"><div class="label">Есть своя палатка?</div><div class="seg"><div><input checked id="tent-${index}-yes" type="radio" name="participants[${index}][tent]" value="Да"><label for="tent-${index}-yes">Да</label></div><div><input id="tent-${index}-no" type="radio" name="participants[${index}][tent]" value="Нет"><label for="tent-${index}-no">Нет</label></div></div></div><div class="field"><div class="label">Есть свой спальник?</div><div class="seg"><div><input checked id="bag-${index}-yes" type="radio" name="participants[${index}][bag]" value="Да"><label for="bag-${index}-yes">Да</label></div><div><input id="bag-${index}-no" type="radio" name="participants[${index}][bag]" value="Нет"><label for="bag-${index}-no">Нет</label></div></div></div></div></div>`}
-
-const benefitRowsEl=document.getElementById('benefitRows');
-
-function renderBenefitRows(){
-  const cards=[...participantsEl.children];
-  benefitRowsEl.innerHTML=cards.map((card,i)=>{
-    const id=card.dataset.participant;
-    const tier=card.querySelector('[data-role="family-tier"]').value;
-    const entered=card.querySelector('input[name$="[name]"]').value.trim();
-    const displayName=entered||`Участник ${i+1}`;
-    return `<div class="benefit-row" data-benefit-for="${id}"><div class="benefit-person">Участник ${i+1}<small>${escapeHtml(displayName)}</small></div><div class="family-tier-buttons"><button class="tier-btn ${tier==='second'?'active':''}" type="button" data-tier="second" aria-pressed="${tier==='second'}">Я второй член многодетной семьи</button><button class="tier-btn ${tier==='thirdPlus'?'active':''}" type="button" data-tier="thirdPlus" aria-pressed="${tier==='thirdPlus'}">Я третий или последующий член многодетной семьи</button></div><div class="tier-hint">${FAMILY_TIERS[tier].label}</div></div>`;
-  }).join('');
-  benefitRowsEl.querySelectorAll('.tier-btn').forEach(button=>button.addEventListener('click',()=>{
-    const row=button.closest('.benefit-row');
-    const card=participantsEl.querySelector(`[data-participant="${row.dataset.benefitFor}"]`);
-    const hidden=card.querySelector('[data-role="family-tier"]');
-    const next=hidden.value===button.dataset.tier?'standard':button.dataset.tier;
-    hidden.value=next;
-    renderBenefitRows();
-    updateSummary();
-  }));
+function maskPhone(input){
+  let d=input.value.replace(/\D/g,'').slice(0,11);
+  if(d.startsWith('8'))d='7'+d.slice(1);
+  if(d&&!d.startsWith('7'))d='7'+d;
+  const p=d.slice(1);
+  let out=d?'+7':'';
+  if(p.length)out+=' ('+p.slice(0,3);
+  if(p.length>=3)out+=') '+p.slice(3,6);
+  if(p.length>=6)out+='-'+p.slice(6,8);
+  if(p.length>=8)out+='-'+p.slice(8,10);
+  input.value=out;
 }
+function planMarkup(index){
+  return `
+    <div class="plans participant-plans">
+      <div><input checked id="plan-${index}-all" type="radio" name="participants[${index}][plan]" value="29 июля — 2 августа" data-label="29 июля — 2 августа" data-price="2500"><label for="plan-${index}-all"><strong>Все дни</strong><span>29 июля — 2 августа</span><b>2 500 ₽</b></label></div>
+      <div><input id="plan-${index}-30" type="radio" name="participants[${index}][plan]" value="30 июля — 2 августа" data-label="30 июля — 2 августа" data-price="1900"><label for="plan-${index}-30"><strong>4 дня</strong><span>30 июля — 2 августа</span><b>1 900 ₽</b></label></div>
+      <div><input id="plan-${index}-31" type="radio" name="participants[${index}][plan]" value="31 июля — 2 августа" data-label="31 июля — 2 августа" data-price="1300"><label for="plan-${index}-31"><strong>3 дня</strong><span>31 июля — 2 августа</span><b>1 300 ₽</b></label></div>
+      <div><input id="plan-${index}-1" type="radio" name="participants[${index}][plan]" value="1–2 августа" data-label="1–2 августа" data-price="900"><label for="plan-${index}-1"><strong>2 дня</strong><span>1–2 августа</span><b>900 ₽</b></label></div>
+    </div>`;
+}
+function participantTemplate(index){
+  return `<article class="participant-card full-registration-card" data-participant="${index}">
+    <input type="hidden" data-role="family-tier" value="standard">
+    <div class="participant-top">
+      <div class="participant-title">Участник ${index}</div>
+      <div class="participant-price" data-role="participant-price">2 500 ₽</div>
+      <button class="remove-participant" type="button">Удалить</button>
+    </div>
 
-function escapeHtml(value){return String(value).replace(/[&<>'"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]))}
+    <div class="participant-section-label">Основные данные</div>
+    <div class="form-grid">
+      <div class="field"><label>ФИО</label><input name="participants[${index}][name]" required minlength="3" autocomplete="name" placeholder="Иван Иванов"></div>
+      <div class="field"><label>Количество лет</label><input name="participants[${index}][age]" type="number" min="13" max="99" required placeholder="18"></div>
+    </div>
+
+    <div class="form-grid">
+      <div class="field"><label>Номер телефона</label><input data-role="phone" name="participants[${index}][phone]" type="tel" required autocomplete="tel" inputmode="tel" minlength="18" placeholder="+7 (___) ___-__-__"></div>
+      <div class="field"><label>Город</label><input name="participants[${index}][city]" value="Саратов" required minlength="2" autocomplete="address-level2"></div>
+    </div>
+
+    <div class="field"><label>Церковь</label><input name="participants[${index}][church]" value="Вокзальная" required minlength="2"><div class="hint">Можно указать свою церковь.</div></div>
+
+    <div class="participant-section-label">Даты пребывания</div>
+    ${planMarkup(index)}
+
+    <div class="participant-section-label">Снаряжение</div>
+    <div class="form-grid">
+      <div class="field">
+        <div class="label">Есть своя палатка?</div>
+        <div class="seg">
+          <div><input checked id="tent-${index}-yes" type="radio" name="participants[${index}][tent]" value="Да" required><label for="tent-${index}-yes">Да</label></div>
+          <div><input id="tent-${index}-no" type="radio" name="participants[${index}][tent]" value="Нет"><label for="tent-${index}-no">Нет</label></div>
+        </div>
+      </div>
+      <div class="field">
+        <div class="label">Есть свой спальник?</div>
+        <div class="seg">
+          <div><input checked id="bag-${index}-yes" type="radio" name="participants[${index}][bag]" value="Да" required><label for="bag-${index}-yes">Да</label></div>
+          <div><input id="bag-${index}-no" type="radio" name="participants[${index}][bag]" value="Нет"><label for="bag-${index}-no">Нет</label></div>
+        </div>
+      </div>
+    </div>
+
+    <details class="participant-benefit">
+      <summary><span>Льгота семьи</span><small>необязательно</small></summary>
+      <div class="participant-benefit-content">
+        <div class="family-tier-buttons">
+          <button class="tier-btn" type="button" data-tier="second" aria-pressed="false">Я второй член семьи</button>
+          <button class="tier-btn" type="button" data-tier="thirdPlus" aria-pressed="false">Я третий или последующий член семьи</button>
+        </div>
+        <div class="tier-current" data-role="tier-current">Без льготы</div>
+      </div>
+    </details>
+  </article>`;
+}
 
 function bindParticipant(card){
-  card.querySelector('.remove-participant').addEventListener('click',()=>{card.remove();renumberParticipants();updateSummary()});
-  card.querySelector('input[name$="[name]"]').addEventListener('input',()=>{renderBenefitRows();updateSummary()});
+  card.querySelector('.remove-participant').addEventListener('click',()=>{
+    card.remove();
+    renumberParticipants();
+    updateSummary();
+  });
+
+  card.querySelectorAll('input').forEach(input=>{
+    if(input.dataset.role==='phone'){
+      input.addEventListener('input',()=>maskPhone(input));
+    }
+    input.addEventListener('input',updateSummary);
+    input.addEventListener('change',updateSummary);
+  });
+
+  card.querySelectorAll('.tier-btn').forEach(button=>{
+    button.addEventListener('click',()=>{
+      const hidden=card.querySelector('[data-role="family-tier"]');
+      hidden.value=hidden.value===button.dataset.tier?'standard':button.dataset.tier;
+      card.querySelectorAll('.tier-btn').forEach(item=>{
+        const active=item.dataset.tier===hidden.value;
+        item.classList.toggle('active',active);
+        item.setAttribute('aria-pressed',String(active));
+      });
+      card.querySelector('[data-role="tier-current"]').textContent=FAMILY_TIERS[hidden.value].label;
+      updateSummary();
+    });
+  });
 }
 
 function addParticipant(){
   participantCounter++;
   participantsEl.insertAdjacentHTML('beforeend',participantTemplate(participantCounter));
-  bindParticipant(participantsEl.lastElementChild);
+  const card=participantsEl.lastElementChild;
+  bindParticipant(card);
   renumberParticipants();
   updateSummary();
+  if(participantsEl.children.length>1){
+    card.scrollIntoView({behavior:'smooth',block:'start'});
+  }
 }
 function renumberParticipants(){
-  [...participantsEl.children].forEach((card,i)=>card.querySelector('.participant-title').textContent=`Участник ${i+1}`);
-  renderBenefitRows();
+  [...participantsEl.children].forEach((card,index)=>{
+    card.querySelector('.participant-title').textContent=`Участник ${index+1}`;
+    card.querySelector('.remove-participant').style.display=participantsEl.children.length>1?'inline-flex':'none';
+  });
 }
 document.getElementById('addParticipant').addEventListener('click',addParticipant);
-refreshDisplayedPrices();
 addParticipant();
 
-function participantPrice(card,base){
+function participantPrice(card){
+  const plan=card.querySelector('input[name$="[plan]"]:checked');
+  const base=currentPlanPrice(plan);
   const tier=card.querySelector('[data-role="family-tier"]').value;
   return Math.min(base,currentTierCap(tier));
 }
 function calculateTotal(){
-  const plan=document.querySelector('input[name="plan"]:checked');
-  const base=currentPlanPrice(plan);
-  const rows=[...participantsEl.children].map(card=>({
-    card,
-    tier:card.querySelector('[data-role="family-tier"]').value,
-    price:participantPrice(card,base)
-  }));
-  return{base,rows,total:rows.reduce((sum,row)=>sum+row.price,0)};
+  const rows=[...participantsEl.children].map(card=>{
+    const plan=card.querySelector('input[name$="[plan]"]:checked');
+    return{
+      card,
+      plan,
+      tier:card.querySelector('[data-role="family-tier"]').value,
+      price:participantPrice(card)
+    };
+  });
+  return{rows,total:rows.reduce((sum,row)=>sum+row.price,0)};
 }
 function updateSummary(){
-  const plan=document.querySelector('input[name="plan"]:checked');
   const pay=document.querySelector('input[name="pay"]:checked');
   const calc=calculateTotal();
+  const plans=[...new Set(calc.rows.map(row=>row.plan.dataset.label))];
+
   document.getElementById('sumCount').textContent=calc.rows.length;
-  document.getElementById('sumDates').textContent=plan.dataset.label;
+  document.getElementById('sumDates').textContent=plans.length===1?plans[0]:'У каждого свои';
   document.getElementById('sumPay').textContent=pay.value;
   document.getElementById('sumTotal').textContent=money(calc.total);
-  document.getElementById('payTransferLabel').textContent='Перевод';
-  document.getElementById('payCashLabel').textContent='Наличными';
-  document.getElementById('breakdown').innerHTML=calc.rows.map((row,i)=>{
+
+  document.getElementById('breakdown').innerHTML=calc.rows.map((row,index)=>{
     row.card.querySelector('[data-role="participant-price"]').textContent=money(row.price);
-    const name=row.card.querySelector('input[name$="[name]"]').value.trim()||`Участник ${i+1}`;
-    return `<div><span>${name}<small style="display:block;color:var(--muted)">${FAMILY_TIERS[row.tier].label}</small></span><strong>${money(row.price)}</strong></div>`;
+    const name=row.card.querySelector('input[name$="[name]"]').value.trim()||`Участник ${index+1}`;
+    return `<div><span>${escapeHtml(name)}<small style="display:block;color:var(--muted)">${escapeHtml(row.plan.dataset.label)} · ${FAMILY_TIERS[row.tier].label}</small></span><strong>${money(row.price)}</strong></div>`;
   }).join('');
-  document.getElementById('sumNote').textContent=(priceIncreaseApplied?'После 25 июля все тарифы увеличены на 300 ₽. ':'До 25 июля действует текущая цена. ')+ 'Льготный тариф выбирается отдельно для каждого участника.';
+
+  document.getElementById('sumNote').textContent='У каждого участника могут быть свои контакты, даты и льгота.';
   document.getElementById('transferBlock').style.display=pay.value==='Перевод'?'block':'none';
+  document.getElementById('paymentScreenshot').required=pay.value==='Перевод';
 }
-document.querySelectorAll('input[name="plan"],input[name="pay"]').forEach(i=>i.addEventListener('change',updateSummary));
+document.querySelectorAll('input[name="pay"]').forEach(input=>input.addEventListener('change',updateSummary));
 updateSummary();
+
+function resetRegistrationForm(form){
+  form.reset();
+  participantsEl.innerHTML='';
+  participantCounter=0;
+  addParticipant();
+  document.getElementById('status').className='status';
+  updateSummary();
+}
 
 function updateCountdown(kind,targetIso){
   const box=document.querySelector(`[data-countdown="${kind}"]`);
   const status=document.querySelector(`[data-status="${kind}"]`);
+  if(!box||!status)return;
   const diff=new Date(targetIso).getTime()-Date.now();
   const left=Math.max(0,diff);
   const totalHours=Math.floor(left/3600000);
@@ -312,69 +692,179 @@ function updateCountdown(kind,targetIso){
   box.querySelector('[data-part="hours"]').textContent=String(totalHours).padStart(3,'0');
   box.querySelector('[data-part="minutes"]').textContent=String(minutes).padStart(2,'0');
   box.querySelector('[data-part="seconds"]').textContent=String(seconds).padStart(2,'0');
-  const ended=diff<=0;
-  status.classList.toggle('show',ended);
-  if(kind==='price'&&ended!==priceIncreaseApplied){
-    priceIncreaseApplied=ended;
-    refreshDisplayedPrices();
-    updateSummary();
-  }
-  if(kind==='registration'){
-    registrationClosed=ended;
-    submitButton.disabled=ended;
-    submitButton.textContent=ended?'Регистрация завершена':'Отправить регистрацию';
-    document.getElementById('addParticipant').disabled=ended;
-  }
+  status.classList.toggle('show',diff<=0);
 }
 function tickCountdowns(){
-  updateCountdown('price','2026-07-25T00:00:00+04:00');
-  updateCountdown('registration','2026-07-28T00:00:00+04:00');
+  updateCountdown('start','2026-07-29T08:00:00+04:00');
 }
-tickCountdowns();setInterval(tickCountdowns,1000);
+tickCountdowns();
+setInterval(tickCountdowns,1000);
 
 const challengeResponse=document.getElementById('challengeResponse');
-function showChallengeResponse(text){challengeResponse.textContent=text;challengeResponse.classList.remove('show');void challengeResponse.offsetWidth;challengeResponse.classList.add('show')}
+function showChallengeResponse(text){
+  challengeResponse.textContent=text;
+  challengeResponse.classList.remove('show');
+  void challengeResponse.offsetWidth;
+  challengeResponse.classList.add('show');
+}
 document.getElementById('yesBtn').onclick=()=>showChallengeResponse('А ты молодец! 😉');
 document.getElementById('noBtn').onclick=()=>showChallengeResponse('Это печально, может, ты передумаешь? 🥲');
 
-const phone=document.getElementById('phone');
-phone.addEventListener('input',()=>{let d=phone.value.replace(/\D/g,'').slice(0,11);if(d.startsWith('8'))d='7'+d.slice(1);if(d&&!d.startsWith('7'))d='7'+d;const p=d.slice(1);let out=d?'+7':'';if(p.length)out+=' ('+p.slice(0,3);if(p.length>=3)out+=') '+p.slice(3,6);if(p.length>=6)out+='-'+p.slice(6,8);if(p.length>=8)out+='-'+p.slice(8,10);phone.value=out});
-function makeApplicationId(){const now=new Date();const pad=n=>String(n).padStart(2,'0');return `RZ-${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}-${Math.floor(1000+Math.random()*9000)}`}
-function fileToBase64(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(String(reader.result).split(',')[1]||'');reader.onerror=()=>reject(new Error('Не удалось прочитать изображение.'));reader.readAsDataURL(file)})}
-function collectParticipants(calc){return calc.rows.map((row,index)=>({
-  name:row.card.querySelector('input[name$="[name]"]').value.trim(),
-  age:Number(row.card.querySelector('input[name$="[age]"]').value),
-  tent:row.card.querySelector('input[name$="[tent]"]:checked').value,
-  sleepingBag:row.card.querySelector('input[name$="[bag]"]:checked').value,
-  familyTier:row.tier,
-  price:row.price
-}))}
+function makeApplicationId(){
+  const now=new Date();
+  const pad=n=>String(n).padStart(2,'0');
+  return `RZ-${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}-${Math.floor(1000+Math.random()*9000)}`;
+}
+function fileToBase64(file){
+  return new Promise((resolve,reject)=>{
+    const reader=new FileReader();
+    reader.onload=()=>resolve(String(reader.result).split(',')[1]||'');
+    reader.onerror=()=>reject(new Error('Не удалось прочитать изображение.'));
+    reader.readAsDataURL(file);
+  });
+}
+function collectParticipants(calc){
+  return calc.rows.map(row=>({
+    name:row.card.querySelector('input[name$="[name]"]').value.trim(),
+    age:Number(row.card.querySelector('input[name$="[age]"]').value),
+    phone:row.card.querySelector('input[name$="[phone]"]').value.trim(),
+    city:row.card.querySelector('input[name$="[city]"]').value.trim(),
+    church:row.card.querySelector('input[name$="[church]"]').value.trim(),
+    plan:row.plan.dataset.label,
+    tent:row.card.querySelector('input[name$="[tent]"]:checked').value,
+    sleepingBag:row.card.querySelector('input[name$="[bag]"]:checked').value,
+    familyTier:row.tier,
+    price:row.price
+  }));
+}
 
-document.getElementById('form').addEventListener('submit',async e=>{
-  e.preventDefault();
-  const form=e.currentTarget;
-  const st=document.getElementById('status');
+document.getElementById('form').addEventListener('submit',async event=>{
+  event.preventDefault();
+  const form=event.currentTarget;
+  const status=document.getElementById('status');
   const button=document.getElementById('submitButton');
-  st.className='status';
-  if(registrationClosed){st.textContent='Регистрация уже завершена.';st.className='status show err';return}
-  if(!form.checkValidity()){form.reportValidity();return}
+  status.className='status';
+  clearInvalidStyles(form);
+
+  const requiredFields=[...form.querySelectorAll('input[required]')];
+  const emptyField=requiredFields.find(field=>{
+    if(field.type==='radio'||field.type==='checkbox'||field.type==='file')return false;
+    return !String(field.value||'').trim();
+  });
+  if(emptyField){
+    emptyField.setCustomValidity('Заполните это поле.');
+    markInvalidField(emptyField);
+    emptyField.reportValidity();
+    emptyField.addEventListener('input',()=>emptyField.setCustomValidity(''),{once:true});
+    return;
+  }
+
+  const phoneFields=[...participantsEl.querySelectorAll('input[data-role="phone"]')];
+  const badPhone=phoneFields.find(field=>field.value.replace(/\D/g,'').length!==11);
+  if(badPhone){
+    badPhone.setCustomValidity('Введите номер телефона полностью.');
+    markInvalidField(badPhone);
+    badPhone.reportValidity();
+    badPhone.addEventListener('input',()=>badPhone.setCustomValidity(''),{once:true});
+    return;
+  }
+
+  if(!form.checkValidity()){
+    const invalid=form.querySelector(':invalid');
+    if(invalid)markInvalidField(invalid);
+    form.reportValidity();
+    return;
+  }
+
   const config=window.RASSKAZAN_CONFIG||{};
   const endpoint=String(config.appsScriptUrl||'').trim();
-  if(!endpoint||endpoint.includes('PASTE_GOOGLE_APPS_SCRIPT')){st.textContent='Сначала вставьте URL Google Apps Script в файл config.js.';st.className='status show err';return}
+  if(!endpoint||endpoint.includes('PASTE_GOOGLE_APPS_SCRIPT')){
+    status.textContent='Сначала вставьте URL Google Apps Script в файл config.js.';
+    status.className='status show err';
+    return;
+  }
+
   const calc=calculateTotal();
-  const plan=document.querySelector('input[name="plan"]:checked');
   const pay=document.querySelector('input[name="pay"]:checked');
   const file=document.getElementById('paymentScreenshot').files[0];
-  if(pay.value==='Перевод'&&!file){st.textContent='При переводе прикрепите скриншот оплаты.';st.className='status show err';return}
-  if(file&&file.size>6*1024*1024){st.textContent='Скриншот слишком большой. Максимальный размер — 6 МБ.';st.className='status show err';return}
-  button.disabled=true;button.textContent='Отправляем…';
+
+  if(pay.value==='Перевод'&&!file){
+    const upload=document.getElementById('paymentScreenshot');
+    upload.setCustomValidity('Прикрепите скриншот перевода.');
+    markInvalidField(upload);
+    upload.reportValidity();
+    upload.addEventListener('change',()=>upload.setCustomValidity(''),{once:true});
+    return;
+  }
+  if(file&&file.size>6*1024*1024){
+    status.textContent='Скриншот слишком большой. Максимальный размер — 6 МБ.';
+    status.className='status show err';
+    return;
+  }
+
+  button.disabled=true;
+  button.textContent='Отправляем…';
+
   try{
-    const screenshot=file?{name:file.name,mimeType:file.type||'image/jpeg',base64:await fileToBase64(file)}:null;
-    const payload={applicationId:makeApplicationId(),phone:phone.value.trim(),city:form.elements.city.value.trim(),church:form.elements.church.value.trim(),plan:plan.dataset.label,paymentMethod:pay.value,participants:collectParticipants(calc),total:calc.total,comment:form.elements.comment.value.trim(),personalDataConsent:document.getElementById('personalDataConsent').checked,screenshot,sourceUrl:location.href};
-    await fetch(endpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
-    st.textContent=`Заявка ${payload.applicationId} отправлена в Google Таблицу. Общая сумма: ${money(calc.total)}.`;
-    st.className='status show ok';
-  }catch(err){st.textContent=err.message||'Не удалось отправить заявку. Проверьте интернет и настройки Google Apps Script.';st.className='status show err'}finally{button.disabled=registrationClosed;button.textContent=registrationClosed?'Регистрация завершена':'Отправить регистрацию'}
-});
+    const screenshot=file?{
+      name:file.name,
+      mimeType:file.type||'image/jpeg',
+      base64:await fileToBase64(file)
+    }:null;
+
+    const payload={
+      applicationId:makeApplicationId(),
+      paymentMethod:pay.value,
+      participants:collectParticipants(calc),
+      total:calc.total,
+      comment:'',
+      personalDataConsent:document.getElementById('personalDataConsent').checked,
+      screenshot,
+      sourceUrl:location.href
+    };
+
+    await fetch(endpoint,{
+      method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body:JSON.stringify(payload)
+    });
+
+    resetRegistrationForm(form);
+    openSuccessModal();
+  }catch(error){
+    status.textContent=error.message||'Не удалось отправить заявку. Проверьте интернет и настройки Google Apps Script.';
+    status.className='status show err';
+  }finally{
+    button.disabled=false;
+    button.textContent='Отправить регистрацию';
+  }
+});</script>
+
+<script>
+(() => {
+  const gallery = document.getElementById('pastGallery');
+  const left = document.querySelector('.gallery-arrow-left');
+  const right = document.querySelector('.gallery-arrow-right');
+  if (!gallery || !left || !right) return;
+
+  const step = () => {
+    const card = gallery.querySelector('.photo');
+    return card ? card.getBoundingClientRect().width + 12 : gallery.clientWidth * 0.82;
+  };
+
+  left.addEventListener('click', () => gallery.scrollBy({left:-step(),behavior:'smooth'}));
+  right.addEventListener('click', () => gallery.scrollBy({left:step(),behavior:'smooth'}));
+
+  const updateArrows = () => {
+    const max = gallery.scrollWidth - gallery.clientWidth;
+    left.style.opacity = gallery.scrollLeft > 8 ? '1' : '.42';
+    right.style.opacity = gallery.scrollLeft < max - 8 ? '1' : '.42';
+  };
+  gallery.addEventListener('scroll', updateArrows, {passive:true});
+  window.addEventListener('resize', updateArrows);
+  updateArrows();
+})();
 </script>
+
 </body></html>
